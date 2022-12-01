@@ -1,8 +1,8 @@
-interface CloseTagProps {
+interface Props {
   tag: string;
 }
 
-export default function CloseTag({ tag }: CloseTagProps) {
+export default function CloseTag({ tag }: Props) {
   return (
     <>
       <span className="text-gray">&lt;</span>

@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import MobileMenu from './MobileMenu';
+import Nav from './Nav';
 
 export default function Header() {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
   const headerRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -13,6 +15,15 @@ export default function Header() {
     };
   }, []);
 
+  const handleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    if (!mobileMenuOpen) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
+  };
+
   const handleScroll = () => {
     if (headerRef.current) {
       setScrolled(window.scrollY >= headerRef.current.offsetHeight);
@@ -20,53 +31,26 @@ export default function Header() {
   };
 
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`} ref={headerRef}>
+    <header
+      className={`header ${scrolled ? 'scrolled' : ''} ${
+        mobileMenuOpen ? 'mobile-menu-active' : ''
+      }`}
+      ref={headerRef}
+    >
       <div className="container">
         <div className="header__logo">
           <Link href="/">id-web.dev</Link>
         </div>
-        <nav className="header__nav">
-          <Link
-            href="#hero"
-            className="nav__link"
-            scroll={false}
-            aria-label="Go to Home section"
-          >
-            #home
-          </Link>
-          <Link
-            href="#about"
-            className="nav__link"
-            scroll={false}
-            aria-label="Go to About section"
-          >
-            #about
-          </Link>
-          <Link
-            href="#portfolio"
-            className="nav__link"
-            scroll={false}
-            aria-label="Go to Portfolio section"
-          >
-            #portfolio
-          </Link>
-          <Link
-            href="#contact"
-            className="nav__link"
-            scroll={false}
-            aria-label="Go to Contact section"
-          >
-            #contact
-          </Link>
-        </nav>
+        <Nav />
         <button
-          className={`header__mobile-btn ${mobileNavOpen ? 'active' : ''}`}
-          onClick={() => setMobileNavOpen(!mobileNavOpen)}
+          className={`header__mobile-btn ${mobileMenuOpen ? 'active' : ''}`}
+          onClick={handleMobileMenu}
         >
           <div></div>
           <div></div>
         </button>
       </div>
+      {mobileMenuOpen && <MobileMenu handleMobileMenu={handleMobileMenu} />}
     </header>
   );
 }
