@@ -165,10 +165,6 @@ body {
     @media (min-width: 576px) {
       background-image: radial-gradient(rgba(255, 255, 255, 0) 0%, #121212 70%);
     }
-
-    @media (min-width: 992px) {
-      background-image: radial-gradient(rgba(255, 255, 255, 0) 0%, #121212 80%);
-    }
   }
 
   @keyframes gradient {
@@ -185,61 +181,88 @@ body {
 }
 
 .hero__content {
-  position: relative;
-  top: -2rem;
-  color: rgba(255, 255, 255, 0.87);
+  line-height: 1;
   margin: auto;
-  max-width: 320px;
-  text-align: center;
+  max-width: 470px;
 
-  @media (min-width: 576px) {
-    top: -1rem;
+  @media (min-width: 1200px) {
     max-width: none;
   }
 
-  @media (min-width: 992px) {
-    top: 0;
-  }
-}
+  .hero__name {
+    $text-shadow-color: #569cd6;
 
-.hero__name {
-  $text-shadow-color: #569cd6;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 0.8;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0 $text-shadow-color, 0 -1px 0 $text-shadow-color,
+      1px -1px 0 $text-shadow-color, 1px 0 0 $text-shadow-color,
+      1px 1px 0 $text-shadow-color, 0 1px 0 $text-shadow-color,
+      -1px 1px 0 $text-shadow-color, -1px 0 0 $text-shadow-color;
 
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 5.5rem;
-  font-weight: 800;
-  line-height: 0.8;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  text-shadow: -1px -1px 0 $text-shadow-color, 0 -1px 0 $text-shadow-color,
-    1px -1px 0 $text-shadow-color, 1px 0 0 $text-shadow-color,
-    1px 1px 0 $text-shadow-color, 0 1px 0 $text-shadow-color,
-    -1px 1px 0 $text-shadow-color, -1px 0 0 $text-shadow-color;
-
-  span {
-    display: block;
-
-    &:first-of-type {
-      font-size: 1.42em;
-    }
-  }
-
-  @media (min-width: 576px) {
-    span {
-      display: inline-block;
+    span:not(.nbsp) {
+      display: block;
 
       &:first-of-type {
-        font-size: 1em;
-        margin-right: 0.25em;
+        font-size: 1.24em;
+      }
+    }
+
+    .nbsp {
+      display: none;
+    }
+
+    @media (min-width: 576px) {
+      font-size: 5rem;
+
+      span:not(.nbsp) {
+        display: inline;
+
+        &:first-of-type {
+          font-size: 1em;
+        }
+      }
+
+      .nbsp {
+        display: inline;
       }
     }
   }
-}
 
-.hero__description {
-  font-size: 1.1rem;
-  font-weight: 300;
-  text-transform: uppercase;
+  .hero__description {
+    color: #569cd6;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 0.9;
+
+    span:not(.nbsp) {
+      display: block;
+      font-size: 0.65em;
+    }
+
+    .nbsp {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      span:not(.nbsp) {
+        font-size: 0.875em;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      span:not(.nbsp) {
+        display: inline;
+      }
+
+      .nbsp {
+        display: inline;
+      }
+    }
+  }
 }
 
 .hero__chevron {

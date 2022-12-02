@@ -7,10 +7,15 @@ export default function Hero() {
       <Particles amount={7} />
       <div className="hero__content">
         <h1 className="hero__name">
-          <span>ILYA</span>
-          <span>DYMA</span>
+          <span>Ilya</span>
+          <span className="nbsp">&nbsp;</span>
+          <span>Dyma</span>
         </h1>
-        <h2 className="hero__description">Front-End Web Developer</h2>
+        <h2 className="hero__description">
+          <span>Front-End</span>
+          <span className="nbsp">&nbsp;</span>
+          <span>Web Developer</span>
+        </h2>
       </div>
       <Link
         href="#about"
