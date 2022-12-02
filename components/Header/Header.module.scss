@@ -13,7 +13,6 @@
   &.scrolled {
     backdrop-filter: blur(4px);
     background-color: rgba(255, 255, 255, 0.05);
-    //background-color: rgba(0, 0, 0, 0.25);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 
@@ -27,12 +26,12 @@
 }
 
 .logo a {
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--white);
   font-weight: 700;
   text-decoration: none;
 
   &:hover {
-    color: #fff;
+    color: var(--white);
   }
 }
 
@@ -53,7 +52,7 @@
   }
 
   div {
-    background-color: rgba(255, 255, 255, 0.87);
+    background-color: var(--white);
     border-radius: 3px;
     height: 2px;
     width: 100%;

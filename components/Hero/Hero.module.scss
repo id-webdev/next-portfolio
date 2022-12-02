@@ -135,8 +135,8 @@
 
   span {
     display: inline-block;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-left: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
     transform: rotate(-45deg);
     width: 24px;
     height: 24px;
