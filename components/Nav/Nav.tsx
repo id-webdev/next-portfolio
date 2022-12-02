@@ -1,15 +1,17 @@
 import Link from 'next/link';
+import styles from './Nav.module.scss';
 
 interface Props {
   handleMobileMenu?: () => void;
+  mobile?: true;
 }
 
-export default function Nav({ handleMobileMenu }: Props) {
+export default function Nav({ handleMobileMenu, mobile }: Props) {
   return (
-    <nav className="header__nav">
+    <nav className={`${styles.nav} ${mobile ? styles.mobile : ''}`}>
       <Link
         href="#hero"
-        className="nav__link"
+        className={styles.navLink}
         onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to Home section"
@@ -18,7 +20,7 @@ export default function Nav({ handleMobileMenu }: Props) {
       </Link>
       <Link
         href="#about"
-        className="nav__link"
+        className={styles.navLink}
         onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to About section"
@@ -26,17 +28,17 @@ export default function Nav({ handleMobileMenu }: Props) {
         #about
       </Link>
       <Link
-        href="#portfolio"
-        className="nav__link"
+        href="#projects"
+        className={styles.navLink}
         onClick={handleMobileMenu}
         scroll={false}
-        aria-label="Go to Portfolio section"
+        aria-label="Go to Projects section"
       >
-        #portfolio
+        #projects
       </Link>
       <Link
         href="#contact"
-        className="nav__link"
+        className={styles.navLink}
         onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to Contact section"

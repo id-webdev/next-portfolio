@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import MobileMenu from './MobileMenu';
-import Nav from './Nav';
+import MobileMenu from '../MobileMenu/MobileMenu';
+import Nav from '../Nav/Nav';
+import styles from './Header.module.scss';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
@@ -32,18 +33,20 @@ export default function Header() {
 
   return (
     <header
-      className={`header ${scrolled ? 'scrolled' : ''} ${
-        mobileMenuOpen ? 'mobile-menu-active' : ''
+      className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${
+        mobileMenuOpen ? styles.mobileMenuOpen : ''
       }`}
       ref={headerRef}
     >
-      <div className="container">
-        <div className="header__logo">
+      <div className="container d-flex">
+        <div className={styles.logo}>
           <Link href="/">id-web.dev</Link>
         </div>
         <Nav />
         <button
-          className={`header__mobile-btn ${mobileMenuOpen ? 'active' : ''}`}
+          className={`${styles.mobileMenuBtn} ${
+            mobileMenuOpen ? styles.mobileMenuOpen : ''
+          }`}
           onClick={handleMobileMenu}
         >
           <div></div>

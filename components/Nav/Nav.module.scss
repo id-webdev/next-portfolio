@@ -1,0 +1,33 @@
+.nav {
+  display: none;
+  align-items: center;
+  gap: 3rem;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  .navLink {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &.mobile {
+    display: flex;
+    flex-direction: column;
+
+    .navLink {
+      font-size: 1.25rem;
+    }
+  }
+}
