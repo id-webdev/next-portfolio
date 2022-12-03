@@ -17,10 +17,6 @@ body {
   background-color: #121212;
   color: var(--white);
   overflow-x: hidden;
-
-  @media (min-width: 768px) {
-    overflow-y: auto !important;
-  }
 }
 
 .container {

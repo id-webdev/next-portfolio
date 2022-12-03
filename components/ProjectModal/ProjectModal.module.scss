@@ -1,0 +1,54 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  z-index: 1000;
+
+  &.modalCardAnimation {
+    .modalBackdrop {
+      pointer-events: none;
+    }
+
+    .modalCard {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.modalCard {
+  position: relative;
+  background-color: lightblue;
+  border-radius: 1rem;
+  margin: auto;
+  padding: 1.5rem;
+  min-width: 500px;
+  animation: fadeDown 0.3s ease;
+  transition: all 0.3s ease;
+
+  @keyframes fadeDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
