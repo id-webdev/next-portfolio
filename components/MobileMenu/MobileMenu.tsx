@@ -1,9 +1,9 @@
 import Nav from '../Nav/Nav';
 import styles from './MobileMenu.module.scss';
 
-interface Props {
+type Props = {
   handleMobileMenu: () => void;
-}
+};
 
 export default function MobileMenu({ handleMobileMenu }: Props) {
   return (

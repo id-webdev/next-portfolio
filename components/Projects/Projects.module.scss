@@ -20,3 +20,15 @@
     z-index: -1;
   }
 }
+
+.masonryGrid {
+  display: flex;
+  column-gap: 1rem;
+  width: auto;
+}
+
+.masonryGridCol {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}

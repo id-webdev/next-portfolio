@@ -4,8 +4,6 @@
   border-radius: 1rem;
   box-shadow: 0px 4px 24px rgba(23, 92, 230, 0.15);
   cursor: pointer;
-  height: 300px;
-  width: 360px;
   overflow: hidden;
   transition: all 0.3s ease;
 
@@ -25,12 +23,10 @@
 }
 
 .demo {
+  position: relative;
   height: 100%;
 
   img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: cover;
     transition: all 0.6s ease;
   }
 }

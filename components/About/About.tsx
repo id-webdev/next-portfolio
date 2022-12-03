@@ -144,7 +144,7 @@ export default function About() {
       </div>
 
       <div className={styles.background}>
-        <Image src={waveSVG} alt="Section Transition Wave" fill />
+        <Image src={waveSVG} alt="Section Transition Wave" fill priority />
       </div>
     </section>
   );

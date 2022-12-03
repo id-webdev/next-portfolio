@@ -1,0 +1,84 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "name": "Lunarpad",
+      "description": "Project description...",
+      "technologies": ["HTML", "CSS", "JS"],
+      "previewSrc": "/project-demo.webp",
+      "demoDesktopSrc": "",
+      "demoMobileSrc": "",
+      "height": 300
+    },
+    {
+      "id": 1,
+      "name": "Sneakypeer",
+      "description": "Project description...",
+      "technologies": ["HTML", "CSS", "JS"],
+      "previewSrc": "/project-demo.webp",
+      "demoDesktopSrc": "",
+      "demoMobileSrc": "",
+      "height": 315
+    },
+    {
+      "id": 2,
+      "name": "Lunarpad",
+      "description": "Project description...",
+      "technologies": ["HTML", "CSS", "JS"],
+      "previewSrc": "/project-demo.webp",
+      "demoDesktopSrc": "",
+      "demoMobileSrc": "",
+      "height": 300
+    },
+    {
+      "id": 3,
+      "name": "Sneakypeer",
+      "description": "Project description...",
+      "technologies": ["HTML", "CSS", "JS"],
+      "previewSrc": "/project-demo.webp",
+      "demoDesktopSrc": "",
+      "demoMobileSrc": "",
+      "height": 280
+    },
+    {
+      "id": 4,
+      "name": "Lunarpad",
+      "description": "Project description...",
+      "technologies": ["HTML", "CSS", "JS"],
+      "previewSrc": "/project-demo.webp",
+      "demoDesktopSrc": "",
+      "demoMobileSrc": "",
+      "height": 290
+    },
+    {
+      "id": 5,
+      "name": "Sneakypeer",
+      "description": "Project description...",
+      "technologies": ["HTML", "CSS", "JS"],
+      "previewSrc": "/project-demo.webp",
+      "demoDesktopSrc": "",
+      "demoMobileSrc": "",
+      "height": 320
+    },
+    {
+      "id": 6,
+      "name": "Lunarpad",
+      "description": "Project description...",
+      "technologies": ["HTML", "CSS", "JS"],
+      "previewSrc": "/project-demo.webp",
+      "demoDesktopSrc": "",
+      "demoMobileSrc": "",
+      "height": 300
+    },
+    {
+      "id": 7,
+      "name": "Sneakypeer",
+      "description": "Project description...",
+      "technologies": ["HTML", "CSS", "JS"],
+      "previewSrc": "/project-demo.webp",
+      "demoDesktopSrc": "",
+      "demoMobileSrc": "",
+      "height": 350
+    }
+  ]
+}

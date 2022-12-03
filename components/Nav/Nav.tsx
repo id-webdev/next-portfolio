@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import styles from './Nav.module.scss';
 
-interface Props {
+type Props = {
   handleMobileMenu?: () => void;
   mobile?: true;
-}
+};
 
 export default function Nav({ handleMobileMenu, mobile }: Props) {
   return (

@@ -1,10 +1,10 @@
 import styles from './Particles.module.scss';
 
-interface ParticlesProps {
+type Props = {
   amount: number;
-}
+};
 
-export default function Particles({ amount }: ParticlesProps) {
+export default function Particles({ amount }: Props) {
   return (
     <div className={styles.particles}>
       {[...Array(amount)].map((e, i) => (

@@ -1,6 +1,6 @@
-interface Props {
+type Props = {
   tag: string;
-}
+};
 
 export default function CloseTag({ tag }: Props) {
   return (

@@ -1,7 +1,7 @@
-interface Props {
+type Props = {
   tag: string;
   id?: string;
-}
+};
 
 export default function OpenTag({ tag, id }: Props) {
   return (
