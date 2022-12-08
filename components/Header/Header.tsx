@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { forwardRef, useEffect, useState } from 'react';
 import MobileMenu from '../MobileMenu/MobileMenu';
+import MobileMenuBtn from '../MobileMenuBtn/MobileMenuBtn';
 import Nav from '../Nav/Nav';
 import styles from './Header.module.scss';
 
@@ -42,15 +43,10 @@ export default forwardRef<HTMLElement>(function Header(props, ref) {
           <Link href="/">id-web.dev</Link>
         </div>
         <Nav />
-        <button
-          className={`${styles.mobileMenuBtn} ${
-            mobileMenuOpen ? styles.mobileMenuOpen : ''
-          }`}
-          onClick={handleMobileMenu}
-        >
-          <div></div>
-          <div></div>
-        </button>
+        <MobileMenuBtn
+          handleMobileMenu={handleMobileMenu}
+          mobileMenuOpen={mobileMenuOpen}
+        />
       </div>
       {mobileMenuOpen && <MobileMenu handleMobileMenu={handleMobileMenu} />}
     </header>

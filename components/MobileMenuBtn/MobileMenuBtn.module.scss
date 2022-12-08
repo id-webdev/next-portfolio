@@ -1,0 +1,39 @@
+.mobileMenuBtn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin-left: auto;
+  width: 30px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  div {
+    background-color: var(--white);
+    border-radius: 3px;
+    height: 2px;
+    width: 100%;
+    transition: all 0.3s ease;
+
+    &:last-of-type {
+      width: 70%;
+    }
+  }
+
+  &.mobileMenuOpen div {
+    &:first-of-type {
+      transform: rotate(135deg) translate(3px, -4px);
+    }
+
+    &:last-of-type {
+      transform: rotate(45deg) translate(-3px, -4px);
+      width: 100%;
+    }
+  }
+}
