@@ -1,10 +1,13 @@
 import Head from 'next/head';
+import { useRef } from 'react';
 import About from '../components/About/About';
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
 
 export default function Home() {
+  const headerRef = useRef(null);
+
   return (
     <>
       <Head>
@@ -13,10 +16,10 @@ export default function Home() {
         <title>id-web.dev</title>
         <meta name="description" content="Ilya Dyma's Portfolio Website" />
       </Head>
-      <Header />
+      <Header ref={headerRef} />
       <Hero />
       <About />
-      <Projects />
+      <Projects headerRef={headerRef} />
     </>
   );
 }

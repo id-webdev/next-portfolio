@@ -1,37 +1,44 @@
 import Image from 'next/image';
 import { useState } from 'react';
+import useScrollbarSize from 'react-scrollbar-size';
 import ProjectModal from '../ProjectModal/ProjectModal';
 import styles from './ProjectCard.module.scss';
 
 type Props = {
+  headerRef: React.RefObject<HTMLElement>;
   name: string;
   description: string;
   technologies: string[];
   previewSrc: string;
   demoDesktopSrc: string;
   demoMobileSrc: string;
-  height: number;
+  cardHeight: number;
 };
 
 export default function ProjectCard({
+  headerRef,
   name,
   description,
   technologies,
   previewSrc,
   demoDesktopSrc,
   demoMobileSrc,
-  height,
+  cardHeight,
 }: Props) {
   const [showProjectModal, setShowProjectModal] = useState<boolean>(false);
+  const { width: scrollbarWidth } = useScrollbarSize();
 
   const handleProjectModal = () => {
     setShowProjectModal(!showProjectModal);
     if (!showProjectModal) {
       document.body.style.overflowY = 'hidden';
-      document.body.style.paddingRight = '16px';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      if (headerRef.current !== null)
+        headerRef.current.style.right = `${scrollbarWidth}px`;
     } else {
       document.body.style.overflowY = 'auto';
       document.body.style.paddingRight = '0';
+      if (headerRef.current !== null) headerRef.current.style.right = '0';
     }
   };
 
@@ -39,7 +46,7 @@ export default function ProjectCard({
     <>
       <div
         className={styles.card}
-        style={{ height: height }}
+        style={{ height: cardHeight }}
         role="button"
         tabIndex={0}
         onClick={handleProjectModal}

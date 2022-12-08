@@ -1,13 +1,12 @@
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import Nav from '../Nav/Nav';
 import styles from './Header.module.scss';
 
-export default function Header() {
+export default forwardRef<HTMLElement>(function Header(props, ref) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
-  const headerRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -26,8 +25,8 @@ export default function Header() {
   };
 
   const handleScroll = () => {
-    if (headerRef.current) {
-      setScrolled(window.scrollY >= headerRef.current.offsetHeight);
+    if (ref !== null && typeof ref !== 'function' && ref.current !== null) {
+      setScrolled(window.scrollY >= ref.current.offsetHeight);
     }
   };
 
@@ -36,7 +35,7 @@ export default function Header() {
       className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${
         mobileMenuOpen ? styles.mobileMenuOpen : ''
       }`}
-      ref={headerRef}
+      ref={ref}
     >
       <div className="container d-flex">
         <div className={styles.logo}>
@@ -56,4 +55,4 @@ export default function Header() {
       {mobileMenuOpen && <MobileMenu handleMobileMenu={handleMobileMenu} />}
     </header>
   );
-}
+});

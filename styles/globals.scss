@@ -1,14 +1,20 @@
+* {
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --white: rgba(255, 255, 255, 0.87);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
+  color-scheme: dark light;
   scroll-behavior: smooth;
   scroll-padding-top: 68px;
 }
@@ -16,6 +22,7 @@ html {
 body {
   background-color: #121212;
   color: var(--white);
+  min-height: 100vh;
   overflow-x: hidden;
 }
 

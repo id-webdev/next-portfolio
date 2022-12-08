@@ -23,12 +23,13 @@
 
 .masonryGrid {
   display: flex;
-  column-gap: 1rem;
+  column-gap: 2rem;
+  padding: 0 2rem;
   width: auto;
 }
 
 .masonryGridCol {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 2rem;
 }

@@ -3,7 +3,11 @@ import projectList from '../../lib/projectList.json';
 import ProjectCard from '../ProjectCard/ProjectCard';
 import styles from './Projects.module.scss';
 
-export default function Projects() {
+type Props = {
+  headerRef: React.RefObject<HTMLElement>;
+};
+
+export default function Projects({ headerRef }: Props) {
   const breakpoints = {
     default: 3,
     768: 2,
@@ -24,6 +28,7 @@ export default function Projects() {
         >
           {projectList.projects.map((project) => (
             <ProjectCard
+              headerRef={headerRef}
               key={project.id}
               name={project.name}
               description={project.description}
@@ -31,7 +36,7 @@ export default function Projects() {
               previewSrc={project.previewSrc}
               demoDesktopSrc={project.demoDesktopSrc}
               demoMobileSrc={project.demoMobileSrc}
-              height={project.height}
+              cardHeight={project.cardHeight}
             />
           ))}
         </Masonry>
