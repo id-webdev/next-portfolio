@@ -14,7 +14,7 @@ export default forwardRef<HTMLElement>(function Header(props, ref) {
     return () => {
       window.removeEventListener('scroll', () => handleScroll);
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);

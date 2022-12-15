@@ -1,4 +1,5 @@
 .hero {
+  position: relative;
   display: flex;
   background-image: linear-gradient(-45deg, #121212, #001442, #812000);
   background-size: 400% 400%;
@@ -6,6 +7,7 @@
   min-height: 100vh;
   width: 100vw;
   padding: 1rem;
+  z-index: 2;
 
   &::after {
     content: '';

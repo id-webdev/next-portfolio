@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import useScrollbarSize from 'react-scrollbar-size';
 import ProjectModal from '../ProjectModal/ProjectModal';
 import styles from './ProjectCard.module.scss';

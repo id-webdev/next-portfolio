@@ -1,3 +1,4 @@
+import React from 'react';
 import Masonry from 'react-masonry-css';
 import projectList from '../../lib/projectList.json';
 import ProjectCard from '../ProjectCard/ProjectCard';

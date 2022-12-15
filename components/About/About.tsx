@@ -1,13 +1,12 @@
-import Image from 'next/image';
 import CloseTag from '../Tags/CloseTag';
 import OpenTag from '../Tags/OpenTag';
 import styles from './About.module.scss';
-import waveSVG from '/public/wave.svg';
 
 export default function About() {
   return (
     <section className={styles.about} id="about">
       <div className="container">
+        <h2 className="heading">#about</h2>
         <code>
           <div className={styles.code}>
             <div className={styles.codeRow}>
@@ -141,10 +140,6 @@ export default function About() {
             </div>
           </div>
         </code>
-      </div>
-
-      <div className={styles.background}>
-        <Image src={waveSVG} alt="Section Transition Wave" fill priority />
       </div>
     </section>
   );

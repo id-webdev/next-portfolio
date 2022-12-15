@@ -33,6 +33,31 @@ body {
   width: 100%;
 }
 
+.heading {
+  position: relative;
+  display: inline-block;
+  color: #569cd6;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -10%;
+    bottom: 10%;
+    background-color: #183367;
+    height: 0.25em;
+    width: 75%;
+    z-index: -1;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
 .d-flex {
   display: flex;
 }
