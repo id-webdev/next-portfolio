@@ -1,7 +1,10 @@
-import React from 'react';
-import Masonry from 'react-masonry-css';
+import { EffectCoverflow, Keyboard } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import projectList from '../../lib/projectList.json';
 import ProjectCard from '../ProjectCard/ProjectCard';
+
+import 'swiper/css';
 import styles from './Projects.module.scss';
 
 type Props = {
@@ -9,39 +12,67 @@ type Props = {
 };
 
 export default function Projects({ headerRef }: Props) {
-  const breakpoints = {
-    default: 3,
-    768: 2,
-    576: 1,
-  };
-
   return (
     <section className={styles.projects} id="projects">
       <div className="container">
-        <h2 className={styles.heading}>#projects</h2>
-
-        {/* TO DO: Projects Categories */}
-
-        <Masonry
-          breakpointCols={breakpoints}
-          className={styles.masonryGrid}
-          columnClassName={styles.masonryGridCol}
-        >
-          {projectList.projects.map((project) => (
+        <h2 className="heading">#projects</h2>
+      </div>
+      <Swiper
+        breakpoints={{
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 64,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 96,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 96,
+          },
+          1400: {
+            slidesPerView: 4,
+            spaceBetween: 80,
+          },
+          1920: {
+            slidesPerView: 5,
+            spaceBetween: 96,
+          },
+        }}
+        centeredSlides={true}
+        coverflowEffect={{
+          rotate: 10,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        effect="coverflow"
+        keyboard={{
+          enabled: true,
+        }}
+        loop={true}
+        modules={[EffectCoverflow, Keyboard]}
+        slideToClickedSlide={true}
+        slidesPerView="auto"
+        spaceBetween={40}
+        touchEventsTarget="container"
+      >
+        {projectList.projects.map((project) => (
+          <SwiperSlide key={project.id}>
             <ProjectCard
               headerRef={headerRef}
-              key={project.id}
               name={project.name}
               description={project.description}
-              technologies={project.technologies}
               previewSrc={project.previewSrc}
               demoDesktopSrc={project.demoDesktopSrc}
               demoMobileSrc={project.demoMobileSrc}
-              cardHeight={project.cardHeight}
+              color={project.color}
             />
-          ))}
-        </Masonry>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }

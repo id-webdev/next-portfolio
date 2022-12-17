@@ -2,18 +2,12 @@ import { useRef } from 'react';
 import styles from './ProjectModal.module.scss';
 
 type Props = {
-  name: string;
-  description: string;
-  technologies: string[];
   demoDesktopSrc: string;
   demoMobileSrc: string;
   handleProjectModal: () => void;
 };
 
 export default function ProjectModal({
-  name,
-  description,
-  technologies,
   demoDesktopSrc,
   demoMobileSrc,
   handleProjectModal,
@@ -46,13 +40,6 @@ export default function ProjectModal({
         </div>
         <p>demoDesktopSrc: {demoDesktopSrc}</p>
         <p>demoMobileSrc: {demoMobileSrc}</p>
-        <h3>{name}</h3>
-        <p>{description}</p>
-        <ul>
-          {technologies.map((technology, index) => (
-            <li key={index}>{technology}</li>
-          ))}
-        </ul>
       </div>
     </div>
   );

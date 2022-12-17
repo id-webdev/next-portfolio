@@ -2,83 +2,57 @@
   "projects": [
     {
       "id": 0,
-      "name": "Lunarpad",
+      "name": "DNElectro",
       "description": "Project description...",
-      "technologies": ["HTML", "CSS", "JS"],
-      "previewSrc": "/project-demo.webp",
+      "previewSrc": "/projects/dnelectro/preview.png",
       "demoDesktopSrc": "",
       "demoMobileSrc": "",
-      "cardHeight": 400
+      "color": "#0078FF"
     },
     {
       "id": 1,
-      "name": "Sneakypeer",
+      "name": "HQD Baltic",
       "description": "Project description...",
-      "technologies": ["HTML", "CSS", "JS"],
-      "previewSrc": "/project-demo.webp",
+      "previewSrc": "/projects/hqdbaltic/preview.png",
       "demoDesktopSrc": "",
       "demoMobileSrc": "",
-      "cardHeight": 515
+      "color": "#BD00FF"
     },
     {
       "id": 2,
       "name": "Lunarpad",
       "description": "Project description...",
-      "technologies": ["HTML", "CSS", "JS"],
-      "previewSrc": "/project-demo.webp",
+      "previewSrc": "/projects/lunarpad/preview.png",
       "demoDesktopSrc": "",
       "demoMobileSrc": "",
-      "cardHeight": 300
+      "color": "#FF9A00"
     },
     {
       "id": 3,
-      "name": "Sneakypeer",
+      "name": "Natalija Rimjane",
       "description": "Project description...",
-      "technologies": ["HTML", "CSS", "JS"],
-      "previewSrc": "/project-demo.webp",
+      "previewSrc": "/projects/natalijarimjane/preview.png",
       "demoDesktopSrc": "",
       "demoMobileSrc": "",
-      "cardHeight": 380
+      "color": "#01FF1F"
     },
     {
       "id": 4,
-      "name": "Lunarpad",
+      "name": "Shortcutty",
       "description": "Project description...",
-      "technologies": ["HTML", "CSS", "JS"],
-      "previewSrc": "/project-demo.webp",
+      "previewSrc": "/projects/shortcutty/preview.png",
       "demoDesktopSrc": "",
       "demoMobileSrc": "",
-      "cardHeight": 490
+      "color": "#E3FF00"
     },
     {
       "id": 5,
       "name": "Sneakypeer",
       "description": "Project description...",
-      "technologies": ["HTML", "CSS", "JS"],
-      "previewSrc": "/project-demo.webp",
+      "previewSrc": "/projects/sneakypeer/preview.png",
       "demoDesktopSrc": "",
       "demoMobileSrc": "",
-      "cardHeight": 520
-    },
-    {
-      "id": 6,
-      "name": "Lunarpad",
-      "description": "Project description...",
-      "technologies": ["HTML", "CSS", "JS"],
-      "previewSrc": "/project-demo.webp",
-      "demoDesktopSrc": "",
-      "demoMobileSrc": "",
-      "cardHeight": 500
-    },
-    {
-      "id": 7,
-      "name": "Sneakypeer",
-      "description": "Project description...",
-      "technologies": ["HTML", "CSS", "JS"],
-      "previewSrc": "/project-demo.webp",
-      "demoDesktopSrc": "",
-      "demoMobileSrc": "",
-      "cardHeight": 350
+      "color": "#FF4162"
     }
   ]
 }
