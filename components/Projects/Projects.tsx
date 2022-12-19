@@ -1,3 +1,4 @@
+import React from 'react';
 import { EffectCoverflow, Keyboard } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

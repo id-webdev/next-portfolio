@@ -1,5 +1,5 @@
-import CloseTag from '../Tags/CloseTag';
-import OpenTag from '../Tags/OpenTag';
+import CloseTag from '../CloseTag/CloseTag';
+import OpenTag from '../OpenTag/OpenTag';
 import styles from './About.module.scss';
 
 export default function About() {

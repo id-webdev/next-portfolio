@@ -3,23 +3,37 @@
   inset: 0;
   display: flex;
   z-index: 1000;
+  padding: 5rem 1rem 1rem;
+  overflow-y: auto;
 
   &.modalCardAnimation {
-    .modalBackdrop {
+    .backdrop {
       pointer-events: none;
     }
 
-    .modalCard {
+    .card {
       transform: scale(1.02);
+    }
+  }
+
+  &.modalCloseAnimation {
+    .backdrop {
+      opacity: 0;
+    }
+
+    .card {
+      opacity: 0;
+      transform: scale(0.75);
     }
   }
 }
 
-.modalBackdrop {
+.backdrop {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   animation: fadeIn 0.3s ease;
+  transform: 0.3s ease;
 
   @keyframes fadeIn {
     from {
@@ -31,24 +45,84 @@
   }
 }
 
-.modalCard {
+.card {
   position: relative;
-  background-color: lightblue;
+  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   margin: auto;
-  padding: 1.5rem;
-  min-width: 500px;
-  animation: fadeDown 0.3s ease;
-  transition: all 0.3s ease;
+  max-width: 800px;
+  overflow: hidden;
+  animation: scaleIn 0.3s ease;
+  transition: 0.3s ease;
+  width: 100%;
 
-  @keyframes fadeDown {
+  @keyframes scaleIn {
     from {
       opacity: 0;
-      transform: translateY(-10%);
+      transform: scale(0.5);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: scale(1);
     }
+  }
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -4px 16px 0 rgba(0, 0, 0, 0.37);
+  padding: 0.5rem 0.75rem;
+  z-index: 1;
+}
+
+.body {
+  display: flex;
+}
+
+.searchBar {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 0.25em;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 0.75rem;
+  font-weight: 300;
+  padding: 0.35rem 0.5rem;
+  margin-left: auto;
+  text-align: center;
+  text-transform: lowercase;
+  width: 100%;
+  max-width: 200px;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: auto;
+  transition: background-color 0.15s ease;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.video {
+  aspect-ratio: 1920/914;
+  margin: 0 auto;
+  max-height: 380px;
+  max-width: 100%;
+
+  &.videoMobile {
+    aspect-ratio: 33/65;
   }
 }

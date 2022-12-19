@@ -1,45 +1,79 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import styles from './ProjectModal.module.scss';
 
 type Props = {
   demoDesktopSrc: string;
   demoMobileSrc: string;
-  handleProjectModal: () => void;
+  headerRef: React.RefObject<HTMLElement>;
+  modalRef: React.RefObject<HTMLDivElement>;
+  name: string;
+  setModalActive: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function ProjectModal({
   demoDesktopSrc,
   demoMobileSrc,
-  handleProjectModal,
+  headerRef,
+  modalRef,
+  name,
+  setModalActive,
 }: Props) {
-  const modalRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const shakeModalCard = () => {
+  const animateModalCard = () => {
     modalRef.current?.classList.add(styles.modalCardAnimation);
     setTimeout(() => {
       modalRef.current?.classList.remove(styles.modalCardAnimation);
     }, 350);
   };
 
+  const handleModalClose = () => {
+    // Close modal smoothly
+    modalRef.current?.classList.add(styles.modalCloseAnimation);
+    setTimeout(() => {
+      modalRef.current?.classList.remove(styles.modalCloseAnimation);
+      setModalActive(false);
+
+      // Return scrolling and remove the padding that is in place of the scrollbar
+      document.body.style.overflowY = 'auto';
+      document.body.style.paddingRight = '0';
+      if (headerRef.current !== null) headerRef.current.style.right = '0';
+    }, 150);
+  };
+
   return (
     <div className={styles.modal} ref={modalRef}>
-      <div className={styles.modalBackdrop} onClick={shakeModalCard}></div>
-      <div className={styles.modalCard}>
-        <div className={styles.modalCardHeader}>
-          <button onClick={handleProjectModal}>
+      <div className={styles.backdrop} onClick={animateModalCard}></div>
+      <div className={styles.card}>
+        <div className={styles.header}>
+          {/* Toggle Switch */}
+          <div className={styles.searchBar}>{name.replace(/ /g, '')}</div>
+          <button className={styles.closeBtn} onClick={handleModalClose}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
+              width="18"
+              height="18"
+              fill="#fff"
               viewBox="0 0 16 16"
             >
               <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
             </svg>
           </button>
         </div>
-        <p>demoDesktopSrc: {demoDesktopSrc}</p>
-        <p>demoMobileSrc: {demoMobileSrc}</p>
+        <div className={`${styles.body}`}>
+          <video
+            ref={videoRef}
+            className={styles.video}
+            height={380}
+            autoPlay
+            controls
+            loop
+            muted
+            playsInline
+          >
+            <source src={demoDesktopSrc} type="video/webm" />
+          </video>
+        </div>
       </div>
     </div>
   );

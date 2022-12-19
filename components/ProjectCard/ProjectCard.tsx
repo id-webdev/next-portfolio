@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import useScrollbarSize from 'react-scrollbar-size';
+import Portal from '../Portal/Portal';
 import ProjectModal from '../ProjectModal/ProjectModal';
 import styles from './ProjectCard.module.scss';
 
@@ -23,21 +24,18 @@ export default function ProjectCard({
   demoMobileSrc,
   color,
 }: Props) {
-  const [showProjectModal, setShowProjectModal] = useState<boolean>(false);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const [modalActive, setModalActive] = useState<boolean>(false);
   const { width: scrollbarWidth } = useScrollbarSize();
 
-  const handleProjectModal = () => {
-    setShowProjectModal(!showProjectModal);
-    if (!showProjectModal) {
-      document.body.style.overflowY = 'hidden';
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-      if (headerRef.current !== null)
-        headerRef.current.style.right = `${scrollbarWidth}px`;
-    } else {
-      document.body.style.overflowY = 'auto';
-      document.body.style.paddingRight = '0';
-      if (headerRef.current !== null) headerRef.current.style.right = '0';
-    }
+  const handleModalOpen = () => {
+    setModalActive(true);
+
+    // Remove scrolling and add padding in place of the scrollbar
+    document.body.style.overflowY = 'hidden';
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+    if (headerRef.current !== null)
+      headerRef.current.style.right = `${scrollbarWidth}px`;
   };
 
   return (
@@ -46,7 +44,7 @@ export default function ProjectCard({
         className={styles.card}
         role="button"
         tabIndex={0}
-        onClick={handleProjectModal}
+        onClick={handleModalOpen}
         style={{ '--project-color': color } as React.CSSProperties}
       >
         <div className={styles.header}>
@@ -80,12 +78,17 @@ export default function ProjectCard({
           <p className={styles.description}>{description}</p>
         </div>
       </div>
-      {showProjectModal && (
-        <ProjectModal
-          demoDesktopSrc={demoDesktopSrc}
-          demoMobileSrc={demoMobileSrc}
-          handleProjectModal={handleProjectModal}
-        />
+      {modalActive && (
+        <Portal selector={document.getElementsByTagName('main')[0]}>
+          <ProjectModal
+            demoDesktopSrc={demoDesktopSrc}
+            demoMobileSrc={demoMobileSrc}
+            headerRef={headerRef}
+            modalRef={modalRef}
+            name={name}
+            setModalActive={setModalActive}
+          />
+        </Portal>
       )}
     </>
   );
