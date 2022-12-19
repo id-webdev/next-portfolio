@@ -1,0 +1,52 @@
+.toggleSwitch {
+  position: relative;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 0.25em;
+  cursor: pointer;
+  padding: 0.15rem 0.15rem;
+  width: max-content;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .slider::before {
+      transform: translateX(100%);
+    }
+
+    &:hover + .slider::before {
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+  }
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 0.15rem;
+    height: 100%;
+    width: 50%;
+    transition: background-color 0.15s ease, transform 0.25s ease;
+    z-index: 0;
+  }
+
+  .sliderOption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+
+    svg path {
+      fill: rgba(255, 255, 255, 0.87);
+    }
+  }
+}

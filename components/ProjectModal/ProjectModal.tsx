@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import styles from './ProjectModal.module.scss';
 
 type Props = {
@@ -18,6 +19,7 @@ export default function ProjectModal({
   name,
   setModalActive,
 }: Props) {
+  const [demoMobile, setDemoMobile] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const animateModalCard = () => {
@@ -41,12 +43,16 @@ export default function ProjectModal({
     }, 150);
   };
 
+  useEffect(() => {
+    videoRef.current?.load();
+  }, [demoMobile]);
+
   return (
     <div className={styles.modal} ref={modalRef}>
       <div className={styles.backdrop} onClick={animateModalCard}></div>
       <div className={styles.card}>
         <div className={styles.header}>
-          {/* Toggle Switch */}
+          <ToggleSwitch demoMobile={demoMobile} setDemoMobile={setDemoMobile} />
           <div className={styles.searchBar}>{name.replace(/ /g, '')}</div>
           <button className={styles.closeBtn} onClick={handleModalClose}>
             <svg
@@ -63,7 +69,9 @@ export default function ProjectModal({
         <div className={`${styles.body}`}>
           <video
             ref={videoRef}
-            className={styles.video}
+            className={`${styles.video} ${
+              demoMobile ? styles.videoMobile : ''
+            }`}
             height={380}
             autoPlay
             controls
@@ -71,7 +79,10 @@ export default function ProjectModal({
             muted
             playsInline
           >
-            <source src={demoDesktopSrc} type="video/webm" />
+            <source
+              src={demoMobile ? demoMobileSrc : demoDesktopSrc}
+              type="video/webm"
+            />
           </video>
         </div>
       </div>
