@@ -9,7 +9,11 @@ type Props = {
 export default function ToggleSwitch({ demoMobile, setDemoMobile }: Props) {
   return (
     <label className={styles.toggleSwitch}>
-      <input type="checkbox" onChange={() => setDemoMobile(!demoMobile)} />
+      <input
+        type="checkbox"
+        checked={demoMobile}
+        onChange={() => setDemoMobile(!demoMobile)}
+      />
       <div className={styles.slider}>
         <div className={styles.sliderOption}>
           <svg

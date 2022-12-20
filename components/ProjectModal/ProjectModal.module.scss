@@ -53,11 +53,25 @@
   border-radius: 1rem;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   margin: auto;
-  max-width: 800px;
+  max-width: 1024px;
   overflow: hidden;
   animation: scaleIn 0.3s ease;
   transition: 0.3s ease;
   width: 100%;
+
+  &.demoMobile {
+    width: fit-content;
+
+    .header {
+      grid-template-columns: min-content 105px 1fr;
+      //justify-content: space-between;
+      column-gap: 1.5rem;
+    }
+
+    .closeBtn {
+      justify-self: end;
+    }
+  }
 
   @keyframes scaleIn {
     from {
@@ -117,10 +131,16 @@
 .video {
   aspect-ratio: 1920/914;
   margin: 0 auto;
-  max-height: 380px;
+  max-height: 600px;
   max-width: 100%;
 
-  &.videoMobile {
-    aspect-ratio: 33/65;
+  @media (min-width: 1200px) {
+    height: 486px;
+  }
+
+  &.demoMobile {
+    aspect-ratio: 1056/2080;
+    height: calc(100vh - 9rem);
+    min-height: 520px;
   }
 }

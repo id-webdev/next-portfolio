@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import styles from './ProjectModal.module.scss';
 
@@ -19,7 +20,8 @@ export default function ProjectModal({
   name,
   setModalActive,
 }: Props) {
-  const [demoMobile, setDemoMobile] = useState<boolean>(false);
+  const isMobile = useMediaQuery(767);
+  const [demoMobile, setDemoMobile] = useState<boolean>(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const animateModalCard = () => {
@@ -40,8 +42,12 @@ export default function ProjectModal({
       document.body.style.overflowY = 'auto';
       document.body.style.paddingRight = '0';
       if (headerRef.current !== null) headerRef.current.style.right = '0';
-    }, 150);
+    }, 200);
   };
+
+  useEffect(() => {
+    setDemoMobile(isMobile);
+  }, [isMobile]);
 
   useEffect(() => {
     videoRef.current?.load();
@@ -50,7 +56,7 @@ export default function ProjectModal({
   return (
     <div className={styles.modal} ref={modalRef}>
       <div className={styles.backdrop} onClick={animateModalCard}></div>
-      <div className={styles.card}>
+      <div className={`${styles.card} ${demoMobile ? styles.demoMobile : ''}`}>
         <div className={styles.header}>
           <ToggleSwitch demoMobile={demoMobile} setDemoMobile={setDemoMobile} />
           <div className={styles.searchBar}>{name.replace(/ /g, '')}</div>
@@ -69,10 +75,7 @@ export default function ProjectModal({
         <div className={`${styles.body}`}>
           <video
             ref={videoRef}
-            className={`${styles.video} ${
-              demoMobile ? styles.videoMobile : ''
-            }`}
-            height={380}
+            className={`${styles.video} ${demoMobile ? styles.demoMobile : ''}`}
             autoPlay
             controls
             loop
