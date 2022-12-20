@@ -3,56 +3,65 @@
     {
       "id": 0,
       "name": "DNElectro",
-      "description": "Project description...",
-      "previewSrc": "/projects/dnelectro/preview.png",
-      "demoDesktopSrc": "",
-      "demoMobileSrc": "",
-      "color": "#0078FF"
+      "description": "Catalogue page and a single product page of the multi-vendor eCommerce website",
+      "previewSrc": "/projects/dnelectro/catalogue/preview.webp",
+      "demoDesktopSrc": "/projects/dnelectro/catalogue/demo-desktop.webm",
+      "demoMobileSrc": "/projects/dnelectro/catalogue/demo-mobile.webm",
+      "color": "#01ff1f"
     },
     {
       "id": 1,
-      "name": "HQD Baltic",
-      "description": "Project description...",
-      "previewSrc": "/projects/hqdbaltic/preview.png",
-      "demoDesktopSrc": "",
-      "demoMobileSrc": "",
-      "color": "#BD00FF"
+      "name": "DNElectro",
+      "description": "Cart and checkout pages with client-side validation and material design form fields",
+      "previewSrc": "/projects/dnelectro/checkout/preview.webp",
+      "demoDesktopSrc": "/projects/dnelectro/checkout/demo-desktop.webm",
+      "demoMobileSrc": "/projects/dnelectro/checkout/demo-mobile.webm",
+      "color": "#e3ff00"
     },
     {
       "id": 2,
-      "name": "Lunarpad",
-      "description": "Project description...",
-      "previewSrc": "/projects/lunarpad/preview.png",
-      "demoDesktopSrc": "",
-      "demoMobileSrc": "",
-      "color": "#FF9A00"
+      "name": "Sneakypeer",
+      "description": "Landing page for a peer-to-peer lending reviews project with animations on viewport entry",
+      "previewSrc": "/projects/sneakypeer/preview.webp",
+      "demoDesktopSrc": "/projects/sneakypeer/demo-desktop.webm",
+      "demoMobileSrc": "/projects/sneakypeer/demo-mobile.webm",
+      "color": "#f6d68d"
     },
     {
       "id": 3,
-      "name": "Natalija Rimjane",
-      "description": "Project description...",
-      "previewSrc": "/projects/natalijarimjane/preview.png",
-      "demoDesktopSrc": "",
-      "demoMobileSrc": "",
-      "color": "#01FF1F"
+      "name": "Lunarpad",
+      "description": "Swipe through the projects with a vertical scroll snapping functionality, both on mobile and desktop",
+      "previewSrc": "/projects/lunarpad/preview.webp",
+      "demoDesktopSrc": "/projects/lunarpad/demo-desktop.webm",
+      "demoMobileSrc": "/projects/lunarpad/demo-mobile.webm",
+      "color": "#ff9a00"
     },
     {
       "id": 4,
       "name": "Shortcutty",
-      "description": "Project description...",
-      "previewSrc": "/projects/shortcutty/preview.png",
-      "demoDesktopSrc": "",
-      "demoMobileSrc": "",
-      "color": "#E3FF00"
+      "description": "A library of shortcuts for a wide range of software applications, including variants for multiple OS",
+      "previewSrc": "/projects/shortcutty/preview.webp",
+      "demoDesktopSrc": "/projects/shortcutty/demo-desktop.webm",
+      "demoMobileSrc": "/projects/shortcutty/demo-mobile.webm",
+      "color": "#0078ff"
     },
     {
       "id": 5,
-      "name": "Sneakypeer",
-      "description": "Project description...",
-      "previewSrc": "/projects/sneakypeer/preview.png",
-      "demoDesktopSrc": "",
-      "demoMobileSrc": "",
-      "color": "#FF4162"
+      "name": "Natalija Rimjane",
+      "description": "A family doctor's personal landing page with scrollspy functionality for navigation links",
+      "previewSrc": "/projects/natalijarimjane/preview.webp",
+      "demoDesktopSrc": "/projects/natalijarimjane/demo-desktop.webm",
+      "demoMobileSrc": "/projects/natalijarimjane/demo-mobile.webm",
+      "color": "#bd00ff"
+    },
+    {
+      "id": 6,
+      "name": "HQD Baltic",
+      "description": "Product catalogue with a nested swiper gallery and a contact form written in JavaScript and PHP",
+      "previewSrc": "/projects/hqdbaltic/preview.webp",
+      "demoDesktopSrc": "/projects/hqdbaltic/demo-desktop.webm",
+      "demoMobileSrc": "/projects/hqdbaltic/demo-mobile.webm",
+      "color": "#fe4773"
     }
   ]
 }
