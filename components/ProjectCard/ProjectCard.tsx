@@ -10,8 +10,10 @@ type Props = {
   name: string;
   description: string;
   previewSrc: string;
-  demoDesktopSrc: string;
-  demoMobileSrc: string;
+  demoDesktopSrcWebm: string | undefined;
+  demoDesktopSrcMp4: string | undefined;
+  demoMobileSrcWebm: string | undefined;
+  demoMobileSrcMp4: string | undefined;
   color: string;
 };
 
@@ -20,8 +22,10 @@ export default function ProjectCard({
   name,
   description,
   previewSrc,
-  demoDesktopSrc,
-  demoMobileSrc,
+  demoDesktopSrcWebm,
+  demoDesktopSrcMp4,
+  demoMobileSrcWebm,
+  demoMobileSrcMp4,
   color,
 }: Props) {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -81,8 +85,10 @@ export default function ProjectCard({
       {modalActive && (
         <Portal selector={document.getElementsByTagName('main')[0]}>
           <ProjectModal
-            demoDesktopSrc={demoDesktopSrc}
-            demoMobileSrc={demoMobileSrc}
+            demoDesktopSrcWebm={demoDesktopSrcWebm}
+            demoDesktopSrcMp4={demoDesktopSrcMp4}
+            demoMobileSrcWebm={demoMobileSrcWebm}
+            demoMobileSrcMp4={demoMobileSrcMp4}
             headerRef={headerRef}
             modalRef={modalRef}
             name={name}

@@ -4,8 +4,10 @@ import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import styles from './ProjectModal.module.scss';
 
 type Props = {
-  demoDesktopSrc: string;
-  demoMobileSrc: string;
+  demoDesktopSrcWebm: string | undefined;
+  demoDesktopSrcMp4: string | undefined;
+  demoMobileSrcWebm: string | undefined;
+  demoMobileSrcMp4: string | undefined;
   headerRef: React.RefObject<HTMLElement>;
   modalRef: React.RefObject<HTMLDivElement>;
   name: string;
@@ -13,8 +15,10 @@ type Props = {
 };
 
 export default function ProjectModal({
-  demoDesktopSrc,
-  demoMobileSrc,
+  demoDesktopSrcWebm,
+  demoDesktopSrcMp4,
+  demoMobileSrcWebm,
+  demoMobileSrcMp4,
   headerRef,
   modalRef,
   name,
@@ -42,7 +46,7 @@ export default function ProjectModal({
       document.body.style.overflowY = 'auto';
       document.body.style.paddingRight = '0';
       if (headerRef.current !== null) headerRef.current.style.right = '0';
-    }, 200);
+    }, 300);
   };
 
   useEffect(() => {
@@ -83,8 +87,12 @@ export default function ProjectModal({
             playsInline
           >
             <source
-              src={demoMobile ? demoMobileSrc : demoDesktopSrc}
+              src={demoMobile ? demoMobileSrcWebm : demoDesktopSrcWebm}
               type="video/webm"
+            />
+            <source
+              src={demoMobile ? demoMobileSrcMp4 : demoDesktopSrcMp4}
+              type="video/mp4"
             />
           </video>
         </div>

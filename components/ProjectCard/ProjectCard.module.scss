@@ -1,21 +1,11 @@
 .card {
-  position: relative;
-  background-color: #001442;
   border: 1px solid #183367;
-  border-bottom: 2px solid var(--project-color);
+  border-bottom: none;
   border-radius: 1em;
   cursor: pointer;
+  opacity: 0.5;
   transition: all 0.3s ease;
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 3%;
-    right: 3%;
-    box-shadow: 0px -5px 20px 4px var(--project-color);
-    z-index: -1;
-  }
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     .hover {
@@ -39,9 +29,12 @@
 
 .body {
   position: relative;
+  background-color: #001442;
+  border-bottom: 2px solid var(--project-color);
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
   padding: 1rem 1.25rem 1.25rem;
   margin-top: auto;
-  overflow: hidden;
 
   &::before {
     content: '';
@@ -56,6 +49,16 @@
       transparent
     );
     transform: skewX(345deg);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    right: 3%;
+    box-shadow: 0px -5px 20px 4px var(--project-color);
+    z-index: -1;
   }
 }
 

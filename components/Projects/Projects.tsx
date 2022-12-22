@@ -6,6 +6,7 @@ import projectList from '../../lib/projectList.json';
 import ProjectCard from '../ProjectCard/ProjectCard';
 
 import 'swiper/css';
+import 'swiper/css/effect-coverflow';
 import styles from './Projects.module.scss';
 
 type Props = {
@@ -30,9 +31,9 @@ export default function Projects({ headerRef }: Props) {
           },
           992: {
             slidesPerView: 3,
-            spaceBetween: 96,
+            spaceBetween: 80,
           },
-          1400: {
+          1200: {
             slidesPerView: 4,
             spaceBetween: 80,
           },
@@ -47,16 +48,16 @@ export default function Projects({ headerRef }: Props) {
           stretch: 0,
           depth: 100,
           modifier: 1,
-          slideShadows: true,
+          slideShadows: false,
         }}
-        effect="coverflow"
+        effect={'coverflow'}
         keyboard={{
           enabled: true,
         }}
-        loop={true}
         modules={[EffectCoverflow, Keyboard]}
         slideToClickedSlide={true}
-        slidesPerView="auto"
+        slidesPerView={'auto'}
+        initialSlide={1}
         spaceBetween={40}
         touchEventsTarget="container"
       >
@@ -67,8 +68,10 @@ export default function Projects({ headerRef }: Props) {
               name={project.name}
               description={project.description}
               previewSrc={project.previewSrc}
-              demoDesktopSrc={project.demoDesktopSrc}
-              demoMobileSrc={project.demoMobileSrc}
+              demoDesktopSrcWebm={project.demoDesktopSrcWebm}
+              demoDesktopSrcMp4={project.demoDesktopSrcMp4}
+              demoMobileSrcWebm={project.demoMobileSrcWebm}
+              demoMobileSrcMp4={project.demoMobileSrcMp4}
               color={project.color}
             />
           </SwiperSlide>

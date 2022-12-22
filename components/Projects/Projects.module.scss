@@ -1,4 +1,8 @@
 .projects {
   background-color: #11132a;
   padding-bottom: 3rem;
+
+  @media (min-width: 992px) and (max-width: 1200px) {
+    padding-top: 3rem;
+  }
 }
