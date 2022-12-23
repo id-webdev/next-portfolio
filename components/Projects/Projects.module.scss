@@ -1,8 +1,38 @@
 .projects {
+  position: relative;
   background-color: #11132a;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 
   @media (min-width: 992px) and (max-width: 1200px) {
     padding-top: 3rem;
+  }
+
+  @media (min-width: 992px) {
+    padding-bottom: 10rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    aspect-ratio: 1000/400;
+    background-image: url('/wave-2.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: scaleX(-1);
+    width: 100%;
+
+    @media (min-width: 576px) {
+      bottom: -3rem;
+    }
+
+    @media (min-width: 768px) {
+      bottom: -5rem;
+    }
+
+    @media (min-width: 1200px) {
+      bottom: -9rem;
+    }
   }
 }

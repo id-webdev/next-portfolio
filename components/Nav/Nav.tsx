@@ -10,7 +10,7 @@ export default function Nav({ handleMobileMenu, mobile }: Props) {
   return (
     <nav className={`${styles.nav} ${mobile ? styles.mobile : ''}`}>
       <Link
-        href="#hero"
+        href="#home"
         className={styles.navLink}
         onClick={handleMobileMenu}
         scroll={false}

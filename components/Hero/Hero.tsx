@@ -4,7 +4,7 @@ import styles from './Hero.module.scss';
 
 export default function Hero() {
   return (
-    <section className={styles.hero} id="hero">
+    <section className={styles.hero} id="home">
       <Particles amount={7} />
       <div className={styles.content}>
         <h1 className={styles.name}>
