@@ -28,6 +28,16 @@
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
+
+    div {
+      &:first-of-type {
+        justify-self: start;
+      }
+
+      &:last-of-type {
+        justify-self: end;
+      }
+    }
   }
 }
 
