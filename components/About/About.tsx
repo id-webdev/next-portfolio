@@ -6,7 +6,9 @@ export default function About() {
   return (
     <section className={styles.about} id="about">
       <div className="container">
-        <h2 className="heading">#about</h2>
+        <div className="text-center">
+          <h2 className="heading">#about</h2>
+        </div>
         <code>
           <div className={styles.code}>
             <div className={styles.codeRow}>
