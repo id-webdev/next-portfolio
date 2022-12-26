@@ -1,0 +1,64 @@
+.footer {
+  position: relative;
+  padding: 6rem 0 2rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background-image: url('/wave-footer.svg');
+    background-repeat: no-repeat;
+    background-position: left 15% bottom;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    @media (min-width: 768px) {
+      background-position: center bottom;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  row-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  a {
+    border-radius: 50%;
+    padding: 0.25rem;
+
+    svg {
+      vertical-align: middle;
+      transition: transform 0.3s ease;
+
+      path {
+        fill: #569cd6;
+      }
+    }
+
+    &:hover {
+      svg {
+        transform: translateY(-0.25rem);
+      }
+    }
+  }
+}
+
+.text {
+  color: #569cd6;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
