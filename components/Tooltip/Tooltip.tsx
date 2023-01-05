@@ -37,7 +37,7 @@ export default function Tooltip({ children, text, gap = 8 }: Props) {
 
       let top =
         elementRect.top - referenceRect.top + referenceElement.scrollTop;
-      let left =
+      const left =
         elementRect.left -
         referenceRect.left +
         (elementRect.width - tooltipRef.current.offsetWidth) / 2 +
