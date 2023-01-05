@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import About from '../components/About/About';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
@@ -9,6 +9,7 @@ import Projects from '../components/Projects/Projects';
 
 export default function Home() {
   const headerRef = useRef(null);
+  const [currentSection, setCurrentSection] = useState('home');
 
   return (
     <>
@@ -18,11 +19,11 @@ export default function Home() {
         <title>id-web.dev</title>
         <meta name="description" content="Ilya Dyma's Portfolio Website" />
       </Head>
-      <Header ref={headerRef} />
-      <Hero />
-      <About />
-      <Projects headerRef={headerRef} />
-      <Contact />
+      <Header ref={headerRef} currentSection={currentSection} />
+      <Hero setCurrentSection={setCurrentSection} />
+      <About setCurrentSection={setCurrentSection} />
+      <Projects headerRef={headerRef} setCurrentSection={setCurrentSection} />
+      <Contact setCurrentSection={setCurrentSection} />
       <Footer />
     </>
   );

@@ -2,16 +2,23 @@ import Link from 'next/link';
 import styles from './Nav.module.scss';
 
 type Props = {
+  currentSection: string;
   handleMobileMenu?: () => void;
   mobile?: true;
 };
 
-export default function Nav({ handleMobileMenu, mobile }: Props) {
+export default function Nav({
+  currentSection,
+  handleMobileMenu,
+  mobile,
+}: Props) {
   return (
     <nav className={`${styles.nav} ${mobile ? styles.mobile : ''}`}>
       <Link
         href="#home"
-        className={styles.navLink}
+        className={`${styles.navLink} ${
+          currentSection === 'home' ? styles.active : ''
+        }`}
         onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to Home section"
@@ -20,7 +27,9 @@ export default function Nav({ handleMobileMenu, mobile }: Props) {
       </Link>
       <Link
         href="#about"
-        className={styles.navLink}
+        className={`${styles.navLink} ${
+          currentSection === 'about' ? styles.active : ''
+        }`}
         onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to About section"
@@ -29,7 +38,9 @@ export default function Nav({ handleMobileMenu, mobile }: Props) {
       </Link>
       <Link
         href="#projects"
-        className={styles.navLink}
+        className={`${styles.navLink} ${
+          currentSection === 'projects' ? styles.active : ''
+        }`}
         onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to Projects section"
@@ -38,7 +49,9 @@ export default function Nav({ handleMobileMenu, mobile }: Props) {
       </Link>
       <Link
         href="#contact"
-        className={styles.navLink}
+        className={`${styles.navLink} ${
+          currentSection === 'contact' ? styles.active : ''
+        }`}
         onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to Contact section"

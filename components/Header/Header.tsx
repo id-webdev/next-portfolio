@@ -5,7 +5,14 @@ import MobileMenuBtn from '../MobileMenuBtn/MobileMenuBtn';
 import Nav from '../Nav/Nav';
 import styles from './Header.module.scss';
 
-export default forwardRef<HTMLElement>(function Header(props, ref) {
+type Props = {
+  currentSection: string;
+};
+
+export default forwardRef<HTMLElement, Props>(function Header(
+  { currentSection },
+  ref
+) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -42,7 +49,7 @@ export default forwardRef<HTMLElement>(function Header(props, ref) {
         <div className={styles.logo}>
           <Link href="/">id-web.dev</Link>
         </div>
-        <Nav />
+        <Nav currentSection={currentSection} />
         <MobileMenuBtn
           handleMobileMenu={handleMobileMenu}
           mobileMenuOpen={mobileMenuOpen}
