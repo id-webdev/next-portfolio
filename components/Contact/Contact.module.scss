@@ -73,6 +73,11 @@
       box-shadow: 0 0 0 2px #183367;
       outline: none;
     }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
   }
 
   label {
