@@ -10,6 +10,12 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  if (!req.body.name || !req.body.email || !req.body.message) {
+    return res
+      .status(400)
+      .json({ statusMessage: 'Not all fields have been filled!' });
+  }
+
   dotenv.config();
 
   const transporter = nodemailer.createTransport({

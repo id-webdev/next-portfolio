@@ -25,7 +25,7 @@ export default function ProjectModal({
   setModalActive,
 }: Props) {
   const isMobile = useMediaQuery(767);
-  const [demoMobile, setDemoMobile] = useState<boolean>(true);
+  const [demoMobile, setDemoMobile] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const animateModalCard = () => {

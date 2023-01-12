@@ -13,8 +13,8 @@ export default forwardRef<HTMLElement, Props>(function Header(
   { currentSection },
   ref
 ) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

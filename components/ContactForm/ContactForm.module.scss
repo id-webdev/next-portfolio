@@ -1,0 +1,94 @@
+.form {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 500px);
+  justify-content: center;
+  row-gap: 1.5rem;
+  z-index: 1;
+}
+
+.formControl {
+  position: relative;
+  box-shadow: 0 0 24px rgba(23, 92, 230, 0.15);
+
+  button {
+    appearance: none;
+    background-color: rgba(24, 51, 103, 0.5);
+    border: 1px solid #183367;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #569cd6;
+    padding: 0.75rem;
+    text-transform: uppercase;
+    transition: 0.15s ease;
+    width: 100%;
+
+    &:hover {
+      background-color: rgba(24, 51, 103, 0.75);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px #183367;
+      outline: none;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    background-color: #121212;
+    color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%);
+    transition: all 0.15s ease;
+    pointer-events: none;
+  }
+
+  input,
+  textarea {
+    appearance: none;
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #183367;
+    border-radius: 0.5em;
+    color: rgba(255, 255, 255, 0.87);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1.5rem 0.875rem 0.625rem;
+    width: 100%;
+
+    &:hover {
+      box-shadow: 0 0 0 1px #183367;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px #183367;
+      outline: none;
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      color: #569cd6;
+      transform: translateY(-110%) translateX(-15%) scale(0.75);
+    }
+  }
+
+  textarea {
+    min-height: 188px;
+    resize: vertical;
+    width: 100%;
+
+    & + label {
+      top: 27px;
+    }
+  }
+}

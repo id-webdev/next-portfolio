@@ -29,7 +29,7 @@ export default function ProjectCard({
   color,
 }: Props) {
   const modalRef = useRef<HTMLDivElement>(null);
-  const [modalActive, setModalActive] = useState<boolean>(false);
+  const [modalActive, setModalActive] = useState(false);
   const { width: scrollbarWidth } = useScrollbarSize();
 
   const handleModalOpen = () => {
