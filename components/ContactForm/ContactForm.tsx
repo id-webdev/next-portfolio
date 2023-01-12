@@ -113,46 +113,70 @@ export default function ContactForm() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.formControl}>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder=" "
-          onBlur={handleBlur}
-          onChange={handleName}
-          value={name}
-        />
-        <label htmlFor="name">Name</label>
+      <div className={styles.formField}>
+        <div
+          className={`${styles.formInput} ${
+            nameDirty && nameError ? styles.formInputError : ''
+          }`}
+        >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder=" "
+            onBlur={handleBlur}
+            onChange={handleName}
+            value={name}
+          />
+          <label htmlFor="name">Name</label>
+        </div>
+        <div className={styles.formError}>
+          {nameDirty && nameError && <p>{nameError}</p>}
+        </div>
       </div>
-      {nameDirty && nameError && <p>{nameError}</p>}
-      <div className={styles.formControl}>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder=" "
-          onBlur={handleBlur}
-          onChange={handleEmail}
-          value={email}
-        />
-        <label htmlFor="email">E-mail</label>
+      <div className={styles.formField}>
+        <div
+          className={`${styles.formInput} ${
+            emailDirty && emailError ? styles.formInputError : ''
+          }`}
+        >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder=" "
+            onBlur={handleBlur}
+            onChange={handleEmail}
+            value={email}
+          />
+          <label htmlFor="email">E-mail</label>
+        </div>
+        <div className={styles.formError}>
+          {emailDirty && emailError && <p>{emailError}</p>}
+        </div>
       </div>
-      {emailDirty && emailError && <p>{emailError}</p>}
-      <div className={styles.formControl}>
-        <textarea
-          rows={9}
-          id="message"
-          name="message"
-          placeholder=" "
-          onBlur={handleBlur}
-          onChange={handleMessage}
-          value={message}
-        ></textarea>
-        <label htmlFor="message">Message</label>
+      <div className={styles.formField}>
+        <div
+          className={`${styles.formInput} ${
+            messageDirty && messageError ? styles.formInputError : ''
+          }`}
+        >
+          <textarea
+            rows={9}
+            id="message"
+            name="message"
+            placeholder=" "
+            onBlur={handleBlur}
+            onChange={handleMessage}
+            value={message}
+          ></textarea>
+          <label htmlFor="message">Message</label>
+        </div>
+        <div className={styles.formError}>
+          {messageDirty && messageError && <p>{messageError}</p>}
+        </div>
       </div>
-      {messageDirty && messageError && <p>{messageError}</p>}
-      <div className={styles.formControl}>
+      <div className={styles.formInput}>
         <button type="submit" disabled={!formValid || isFormSending}>
           Submit
         </button>

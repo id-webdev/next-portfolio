@@ -3,11 +3,11 @@
   display: grid;
   grid-template-columns: minmax(0, 500px);
   justify-content: center;
-  row-gap: 1.5rem;
+  row-gap: 0.15rem;
   z-index: 1;
 }
 
-.formControl {
+.formInput {
   position: relative;
   box-shadow: 0 0 24px rgba(23, 92, 230, 0.15);
 
@@ -44,10 +44,11 @@
   label {
     position: absolute;
     top: 50%;
-    left: 1em;
+    left: 0.875rem;
     background-color: #121212;
     color: rgba(255, 255, 255, 0.5);
     transform: translateY(-50%);
+    transform-origin: left top;
     transition: all 0.15s ease;
     pointer-events: none;
   }
@@ -78,7 +79,7 @@
     &:focus + label,
     &:not(:placeholder-shown) + label {
       color: #569cd6;
-      transform: translateY(-110%) translateX(-15%) scale(0.75);
+      transform: translateY(-110%) scale(0.75);
     }
   }
 
@@ -89,6 +90,40 @@
 
     & + label {
       top: 27px;
+    }
+  }
+
+  &.formInputError {
+    label {
+      color: #f44336 !important;
+    }
+
+    input,
+    textarea {
+      border-color: #f44336;
+    }
+  }
+}
+
+.formError {
+  color: #f44336;
+  font-size: 0.875rem;
+  padding-left: 0.875rem;
+  line-height: 24px;
+  height: 24px;
+
+  > * {
+    animation: fadeInDown 0.3s ease forwards;
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 }
