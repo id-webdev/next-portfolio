@@ -47,10 +47,10 @@ export default function About({ setCurrentSection }: AboutProps) {
               <div className={`${styles.codeRow} ${styles.tab4}`}>
                 <span className={styles.codeLine}>4</span>
                 <div className={styles.codeText}>
-                  Since discovering my passion for Web Development in Summer
-                  2020, my journey started with developing basic landing pages
-                  using HTML5, CSS3, Bootstrap, and jQuery library for
-                  JavaScript.
+                  My journey began in the Summer of 2020 when I discovered my
+                  passion for Web Development. I started by creating basic
+                  landing pages using HTML, CSS &#40;SCSS&#41;, JavaScript,
+                  jQuery, and Bootstrap.
                 </div>
               </div>
 
@@ -71,13 +71,10 @@ export default function About({ setCurrentSection }: AboutProps) {
               <div className={`${styles.codeRow} ${styles.tab4}`}>
                 <span className={styles.codeLine}>7</span>
                 <div className={styles.codeText}>
-                  Through freelancing, I had an opportunity to collaborate with
-                  teams of professional designers and back-end developers on
-                  multiple medium-scale projects built on the Laravel PHP
-                  framework. This experience exposed me to the nuances of
-                  maintaining and working on larger projects, such as using
-                  version control, following style guides, working as a team,
-                  and more.
+                  Through freelancing, I gained experience working on
+                  medium-scale projects in a team environment, which taught me
+                  the importance of client communication, understanding their
+                  requirements, and delivering projects on time.
                 </div>
               </div>
 
@@ -91,9 +88,10 @@ export default function About({ setCurrentSection }: AboutProps) {
               <div className={`${styles.codeRow} ${styles.tab4}`}>
                 <span className={styles.codeLine}>9</span>
                 <div className={styles.codeText}>
-                  In those projects, I was responsible for turning Figma designs
-                  into responsive layouts, interfaces, and components with
-                  performance, reusability, and scalability in mind.
+                  In those projects, I was responsible for converting Figma
+                  designs into responsive layouts, interfaces, and components
+                  while keeping performance, reusability, and scalability in
+                  mind.
                 </div>
               </div>
 
@@ -114,39 +112,23 @@ export default function About({ setCurrentSection }: AboutProps) {
               <div className={`${styles.codeRow} ${styles.tab4}`}>
                 <span className={styles.codeLine}>12</span>
                 <div className={styles.codeText}>
-                  It was only later that I felt I was ready to bring my
-                  development skills to the next level, and started to learn
-                  about front-end JavaScript frameworks. I have built some small
-                  projects using the most popular three - ReactJS, Vue.js, and
-                  Angular. I like them all and don&apos;t mind taking on a job
-                  that employs any one of them.
-                </div>
-              </div>
-
-              <div className={`${styles.codeRow} ${styles.tab4}`}>
-                <span className={styles.codeLine}>13</span>
-                <div className={styles.codeText}>
-                  <OpenTag tag="br" />
-                </div>
-              </div>
-
-              <div className={`${styles.codeRow} ${styles.tab4}`}>
-                <span className={styles.codeLine}>14</span>
-                <div className={styles.codeText}>
-                  Currently, I&apos;m working part-time on an NFT project that
-                  uses ReactJS.
+                  To further improve my development skills, I delved into
+                  learning JavaScript frameworks. React & Vue have allowed me to
+                  make web development more efficient and enjoyable, and I
+                  continue to expand my knowledge of them through daily
+                  practice.
                 </div>
               </div>
 
               <div className={`${styles.codeRow} ${styles.tab2}`}>
-                <span className={styles.codeLine}>15</span>
+                <span className={styles.codeLine}>13</span>
                 <div className={styles.codeText}>
                   <CloseTag tag="p" />
                 </div>
               </div>
 
               <div className={styles.codeRow}>
-                <span className={styles.codeLine}>16</span>
+                <span className={styles.codeLine}>14</span>
                 <div className={styles.codeText}>
                   <CloseTag tag="section" />
                 </div>
