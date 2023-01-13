@@ -1,17 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import styles from './ProjectModal.module.scss';
 
-type Props = {
+type ProjectModalProps = {
   demoDesktopSrcWebm: string | undefined;
   demoDesktopSrcMp4: string | undefined;
   demoMobileSrcWebm: string | undefined;
   demoMobileSrcMp4: string | undefined;
-  headerRef: React.RefObject<HTMLElement>;
-  modalRef: React.RefObject<HTMLDivElement>;
+  headerRef: RefObject<HTMLElement>;
+  modalRef: RefObject<HTMLDivElement>;
   name: string;
-  setModalActive: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalActive: (active: boolean) => void;
 };
 
 export default function ProjectModal({
@@ -23,7 +23,7 @@ export default function ProjectModal({
   modalRef,
   name,
   setModalActive,
-}: Props) {
+}: ProjectModalProps) {
   const isMobile = useMediaQuery(767);
   const [demoMobile, setDemoMobile] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);

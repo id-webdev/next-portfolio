@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import React, { useRef, useState } from 'react';
+import { CSSProperties, RefObject, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import useScrollbarSize from 'react-scrollbar-size';
-import Portal from '../Portal/Portal';
 import ProjectModal from '../ProjectModal/ProjectModal';
 import styles from './ProjectCard.module.scss';
 
-type Props = {
-  headerRef: React.RefObject<HTMLElement>;
+type ProjectCardProps = {
+  headerRef: RefObject<HTMLElement>;
   name: string;
   description: string;
   previewSrc: string;
@@ -27,7 +27,7 @@ export default function ProjectCard({
   demoMobileSrcWebm,
   demoMobileSrcMp4,
   color,
-}: Props) {
+}: ProjectCardProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const [modalActive, setModalActive] = useState(false);
   const { width: scrollbarWidth } = useScrollbarSize();
@@ -49,7 +49,7 @@ export default function ProjectCard({
         role="button"
         tabIndex={0}
         onClick={handleModalOpen}
-        style={{ '--project-color': color } as React.CSSProperties}
+        style={{ '--project-color': color } as CSSProperties}
       >
         <div className={styles.header}>
           <Image
@@ -82,8 +82,8 @@ export default function ProjectCard({
           <p className={styles.description}>{description}</p>
         </div>
       </div>
-      {modalActive && (
-        <Portal selector={document.getElementsByTagName('main')[0]}>
+      {modalActive &&
+        createPortal(
           <ProjectModal
             demoDesktopSrcWebm={demoDesktopSrcWebm}
             demoDesktopSrcMp4={demoDesktopSrcMp4}
@@ -93,9 +93,9 @@ export default function ProjectCard({
             modalRef={modalRef}
             name={name}
             setModalActive={setModalActive}
-          />
-        </Portal>
-      )}
+          />,
+          document.getElementsByTagName('main')[0]
+        )}
     </>
   );
 }

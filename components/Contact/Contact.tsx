@@ -2,11 +2,11 @@ import { Waypoint } from 'react-waypoint';
 import ContactForm from '../ContactForm/ContactForm';
 import styles from './Contact.module.scss';
 
-type Props = {
+type ContactProps = {
   setCurrentSection: (arg0: string) => void;
 };
 
-export default function Contact({ setCurrentSection }: Props) {
+export default function Contact({ setCurrentSection }: ContactProps) {
   return (
     <Waypoint onEnter={() => setCurrentSection('contact')} bottomOffset="45%">
       <section className={styles.contact} id="contact">

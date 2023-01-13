@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import styles from './Nav.module.scss';
 
-type Props = {
-  currentSection: string;
+type NavProps = {
+  currentSection?: string;
   handleMobileMenu?: () => void;
   mobile?: true;
 };
@@ -11,7 +11,7 @@ export default function Nav({
   currentSection,
   handleMobileMenu,
   mobile,
-}: Props) {
+}: NavProps) {
   return (
     <nav className={`${styles.nav} ${mobile ? styles.mobile : ''}`}>
       <Link

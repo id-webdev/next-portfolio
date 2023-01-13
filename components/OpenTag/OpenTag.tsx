@@ -1,9 +1,9 @@
-type Props = {
+type OpenTagProps = {
   tag: string;
   id?: string;
 };
 
-export default function OpenTag({ tag, id }: Props) {
+export default function OpenTag({ tag, id }: OpenTagProps) {
   return (
     <>
       <span className="text-gray">&lt;</span>

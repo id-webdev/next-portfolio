@@ -1,4 +1,4 @@
-import React from 'react';
+import { RefObject } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { EffectCoverflow, Keyboard } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,12 +10,15 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import styles from './Projects.module.scss';
 
-type Props = {
-  headerRef: React.RefObject<HTMLElement>;
+type ProjectsProps = {
+  headerRef: RefObject<HTMLElement>;
   setCurrentSection: (arg0: string) => void;
 };
 
-export default function Projects({ headerRef, setCurrentSection }: Props) {
+export default function Projects({
+  headerRef,
+  setCurrentSection,
+}: ProjectsProps) {
   return (
     <Waypoint
       onEnter={() => setCurrentSection('projects')}

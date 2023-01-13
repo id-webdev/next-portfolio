@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import styles from './Tooltip.module.scss';
 
-type Props = {
-  children: React.ReactNode;
+type TooltipProps = {
+  children: ReactNode;
   text: string;
   gap?: number;
 };
 
-export default function Tooltip({ children, text, gap = 8 }: Props) {
+export default function Tooltip({ children, text, gap = 8 }: TooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);

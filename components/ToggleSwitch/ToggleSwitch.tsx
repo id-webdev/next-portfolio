@@ -1,12 +1,14 @@
-import React from 'react';
 import styles from './ToggleSwitch.module.scss';
 
-type Props = {
+type ToggleSwitchProps = {
   demoMobile: boolean;
-  setDemoMobile: React.Dispatch<React.SetStateAction<boolean>>;
+  setDemoMobile: (demoMobile: boolean) => void;
 };
 
-export default function ToggleSwitch({ demoMobile, setDemoMobile }: Props) {
+export default function ToggleSwitch({
+  demoMobile,
+  setDemoMobile,
+}: ToggleSwitchProps) {
   return (
     <label className={styles.toggleSwitch}>
       <input

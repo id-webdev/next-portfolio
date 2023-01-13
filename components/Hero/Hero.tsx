@@ -3,11 +3,11 @@ import { Waypoint } from 'react-waypoint';
 import Particles from '../Particles/Particles';
 import styles from './Hero.module.scss';
 
-type Props = {
+type HeroProps = {
   setCurrentSection: (arg0: string) => void;
 };
 
-export default function Hero({ setCurrentSection }: Props) {
+export default function Hero({ setCurrentSection }: HeroProps) {
   return (
     <Waypoint onEnter={() => setCurrentSection('home')} topOffset="45%">
       <section className={styles.hero} id="home">

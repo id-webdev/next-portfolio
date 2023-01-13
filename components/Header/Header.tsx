@@ -5,11 +5,11 @@ import MobileMenuBtn from '../MobileMenuBtn/MobileMenuBtn';
 import Nav from '../Nav/Nav';
 import styles from './Header.module.scss';
 
-type Props = {
+type HeaderProps = {
   currentSection: string;
 };
 
-export default forwardRef<HTMLElement, Props>(function Header(
+export default forwardRef<HTMLElement, HeaderProps>(function Header(
   { currentSection },
   ref
 ) {

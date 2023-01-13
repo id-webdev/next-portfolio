@@ -1,6 +1,6 @@
 import { ChangeEvent, FocusEvent, FormEvent, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useSnackbar } from '../../hooks/useSnackbar';
-import Portal from '../Portal/Portal';
 import Snackbar from '../Snackbar/Snackbar';
 import styles from './ContactForm.module.scss';
 
@@ -199,15 +199,15 @@ export default function ContactForm() {
         </div>
       </form>
 
-      {open && (
-        <Portal selector={document.getElementsByTagName('main')[0]}>
+      {open &&
+        createPortal(
           <Snackbar
             type={type}
             message={snackbarMessage}
             hideSnackbar={hideSnackbar}
-          />
-        </Portal>
-      )}
+          />,
+          document.getElementsByTagName('main')[0]
+        )}
     </>
   );
 }

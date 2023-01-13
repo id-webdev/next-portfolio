@@ -3,11 +3,11 @@ import CloseTag from '../CloseTag/CloseTag';
 import OpenTag from '../OpenTag/OpenTag';
 import styles from './About.module.scss';
 
-type Props = {
+type AboutProps = {
   setCurrentSection: (arg0: string) => void;
 };
 
-export default function About({ setCurrentSection }: Props) {
+export default function About({ setCurrentSection }: AboutProps) {
   return (
     <Waypoint
       onEnter={() => setCurrentSection('about')}

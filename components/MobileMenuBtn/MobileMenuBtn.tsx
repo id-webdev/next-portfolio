@@ -1,6 +1,6 @@
 import styles from './MobileMenuBtn.module.scss';
 
-type Props = {
+type MobileMenuBtnProps = {
   handleMobileMenu: () => void;
   mobileMenuOpen: boolean;
 };
@@ -8,7 +8,7 @@ type Props = {
 export default function MobileMenuBtn({
   handleMobileMenu,
   mobileMenuOpen,
-}: Props) {
+}: MobileMenuBtnProps) {
   return (
     <button
       className={`${styles.mobileMenuBtn} ${
