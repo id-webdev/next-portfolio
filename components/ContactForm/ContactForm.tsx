@@ -1,11 +1,13 @@
 import { ChangeEvent, FocusEvent, FormEvent, useEffect, useState } from 'react';
+import { useSnackbar } from '../../hooks/useSnackbar';
+import Portal from '../Portal/Portal';
+import Snackbar from '../Snackbar/Snackbar';
 import styles from './ContactForm.module.scss';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [statusMessage, setStatusMessage] = useState('');
   const [nameDirty, setNameDirty] = useState(false);
   const [emailDirty, setEmailDirty] = useState(false);
   const [messageDirty, setMessageDirty] = useState(false);
@@ -14,6 +16,13 @@ export default function ContactForm() {
   const [messageError, setMessageError] = useState('Message is required');
   const [formValid, setFormValid] = useState(false);
   const [isFormSending, setFormSending] = useState(false);
+  const {
+    type,
+    message: snackbarMessage,
+    open,
+    showSnackbar,
+    hideSnackbar,
+  } = useSnackbar();
 
   useEffect(() => {
     if (nameError || emailError || messageError) {
@@ -103,85 +112,102 @@ export default function ContactForm() {
         setName('');
         setEmail('');
         setMessage('');
-        setStatusMessage('Your message has been sent successfuly!');
+        showSnackbar({
+          type: 'success',
+          message: 'Your message has been sent!',
+        });
         return;
       }
 
-      setStatusMessage('Something went wrong. Please try again later.');
+      showSnackbar({
+        type: 'error',
+        message: 'Something went wrong',
+      });
     });
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.formField}>
-        <div
-          className={`${styles.formInput} ${
-            nameDirty && nameError ? styles.formInputError : ''
-          }`}
-        >
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder=" "
-            onBlur={handleBlur}
-            onChange={handleName}
-            value={name}
+    <>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.formField}>
+          <div
+            className={`${styles.formInput} ${
+              nameDirty && nameError ? styles.formInputError : ''
+            }`}
+          >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder=" "
+              onBlur={handleBlur}
+              onChange={handleName}
+              value={name}
+            />
+            <label htmlFor="name">Name</label>
+          </div>
+          <div className={styles.formError}>
+            {nameDirty && nameError && <p>{nameError}</p>}
+          </div>
+        </div>
+        <div className={styles.formField}>
+          <div
+            className={`${styles.formInput} ${
+              emailDirty && emailError ? styles.formInputError : ''
+            }`}
+          >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder=" "
+              onBlur={handleBlur}
+              onChange={handleEmail}
+              value={email}
+            />
+            <label htmlFor="email">E-mail</label>
+          </div>
+          <div className={styles.formError}>
+            {emailDirty && emailError && <p>{emailError}</p>}
+          </div>
+        </div>
+        <div className={styles.formField}>
+          <div
+            className={`${styles.formInput} ${
+              messageDirty && messageError ? styles.formInputError : ''
+            }`}
+          >
+            <textarea
+              rows={9}
+              id="message"
+              name="message"
+              placeholder=" "
+              onBlur={handleBlur}
+              onChange={handleMessage}
+              value={message}
+            ></textarea>
+            <label htmlFor="message">Message</label>
+          </div>
+          <div className={styles.formError}>
+            {messageDirty && messageError && <p>{messageError}</p>}
+          </div>
+        </div>
+        <div className={styles.formInput}>
+          <button type="submit" disabled={!formValid || isFormSending}>
+            Submit
+          </button>
+        </div>
+      </form>
+
+      {open && (
+        <Portal selector={document.getElementsByTagName('main')[0]}>
+          <Snackbar
+            type={type}
+            message={snackbarMessage}
+            hideSnackbar={hideSnackbar}
           />
-          <label htmlFor="name">Name</label>
-        </div>
-        <div className={styles.formError}>
-          {nameDirty && nameError && <p>{nameError}</p>}
-        </div>
-      </div>
-      <div className={styles.formField}>
-        <div
-          className={`${styles.formInput} ${
-            emailDirty && emailError ? styles.formInputError : ''
-          }`}
-        >
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder=" "
-            onBlur={handleBlur}
-            onChange={handleEmail}
-            value={email}
-          />
-          <label htmlFor="email">E-mail</label>
-        </div>
-        <div className={styles.formError}>
-          {emailDirty && emailError && <p>{emailError}</p>}
-        </div>
-      </div>
-      <div className={styles.formField}>
-        <div
-          className={`${styles.formInput} ${
-            messageDirty && messageError ? styles.formInputError : ''
-          }`}
-        >
-          <textarea
-            rows={9}
-            id="message"
-            name="message"
-            placeholder=" "
-            onBlur={handleBlur}
-            onChange={handleMessage}
-            value={message}
-          ></textarea>
-          <label htmlFor="message">Message</label>
-        </div>
-        <div className={styles.formError}>
-          {messageDirty && messageError && <p>{messageError}</p>}
-        </div>
-      </div>
-      <div className={styles.formInput}>
-        <button type="submit" disabled={!formValid || isFormSending}>
-          Submit
-        </button>
-      </div>
-      {statusMessage && <p>{statusMessage}</p>}
-    </form>
+        </Portal>
+      )}
+    </>
   );
 }

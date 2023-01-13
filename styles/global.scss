@@ -26,6 +26,11 @@ body {
   overflow-x: hidden;
 }
 
+img,
+svg {
+  vertical-align: middle;
+}
+
 .container {
   max-width: 1140px;
   margin: 0 auto;

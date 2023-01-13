@@ -1,6 +1,6 @@
 import { Montserrat } from '@next/font/google';
 import type { AppProps } from 'next/app';
-import '../styles/globals.scss';
+import '../styles/global.scss';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
