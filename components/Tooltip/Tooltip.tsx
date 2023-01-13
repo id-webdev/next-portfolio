@@ -7,7 +7,7 @@ type TooltipProps = {
   gap?: number;
 };
 
-export default function Tooltip({ children, text, gap = 8 }: TooltipProps) {
+export default function Tooltip({ children, text, gap = 6 }: TooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
