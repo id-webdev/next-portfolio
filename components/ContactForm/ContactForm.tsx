@@ -1,5 +1,13 @@
-import { ChangeEvent, FocusEvent, FormEvent, useEffect, useState } from 'react';
+import {
+  ChangeEvent,
+  FocusEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import { createPortal } from 'react-dom';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useSnackbar } from '../../hooks/useSnackbar';
 import Snackbar from '../Snackbar/Snackbar';
 import styles from './ContactForm.module.scss';
@@ -23,6 +31,7 @@ export default function ContactForm() {
     showSnackbar,
     hideSnackbar,
   } = useSnackbar();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   useEffect(() => {
     if (nameError || emailError || messageError) {
@@ -91,10 +100,21 @@ export default function ContactForm() {
     e.preventDefault();
     setFormSending(true);
 
+    const token = await handleRecaptchaVerify();
+
+    if (!token) {
+      setFormSending(false);
+      showSnackbar({
+        type: 'error',
+        message: 'Google reCaptcha is not ready',
+      });
+    }
+
     const data = {
       name,
       email,
       message,
+      token,
     };
 
     await fetch('/api/contact', {
@@ -125,6 +145,17 @@ export default function ContactForm() {
       });
     });
   }
+
+  const handleRecaptchaVerify = useCallback(
+    async function () {
+      if (!executeRecaptcha) {
+        return;
+      }
+      const token = await executeRecaptcha();
+      return token;
+    },
+    [executeRecaptcha]
+  );
 
   return (
     <>

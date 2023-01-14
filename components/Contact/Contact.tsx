@@ -21,6 +21,25 @@ export default function Contact({ setCurrentSection }: ContactProps) {
             <a href="mailto:ilyuha45@gmail.com">ilyuha45@gmail.com</a>
           </p>
           <ContactForm />
+          <p className={styles.recaptchaNotice}>
+            This site is protected by reCAPTCHA and the Google{' '}
+            <a
+              href="https://policies.google.com/privacy"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Privacy Policy
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://policies.google.com/terms"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Terms of Service
+            </a>{' '}
+            apply.
+          </p>
         </div>
       </section>
     </Waypoint>
