@@ -32,6 +32,8 @@ export default function ProjectCard({
   const [modalActive, setModalActive] = useState(false);
   const { width: scrollbarWidth } = useScrollbarSize();
 
+  console.log(scrollbarWidth);
+
   function handleModalOpen() {
     setModalActive(true);
 

@@ -7,10 +7,34 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  // Firefox Scrollbar
+  scrollbar-color: #183367 #121212;
+  scrollbar-width: thin;
 }
 
 :root {
   --white: rgba(255, 255, 255, 0.87);
+}
+
+::-webkit-scrollbar {
+  width: 8px; // same as scrollbar-width: thin
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #183367;
+
+  // Make the styling consistent with Firefox
+  &:hover {
+    background: #2b4276;
+  }
+  &:active {
+    background: #5e75b5;
+  }
 }
 
 html {
