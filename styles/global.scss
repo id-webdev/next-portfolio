@@ -27,6 +27,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: #183367;
+  border-radius: 100vw;
 
   // Make the styling consistent with Firefox
   &:hover {
