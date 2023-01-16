@@ -45,7 +45,7 @@ export default forwardRef<HTMLElement, HeaderProps>(function Header(
       }`}
       ref={ref}
     >
-      <div className="container d-flex">
+      <div className={`container ${styles.flex}`}>
         <div className={styles.logo}>
           <Link href="/">id-web.dev</Link>
         </div>

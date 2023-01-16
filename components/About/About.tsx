@@ -1,6 +1,6 @@
 import { Waypoint } from 'react-waypoint';
-import CloseTag from '../CloseTag/CloseTag';
-import OpenTag from '../OpenTag/OpenTag';
+import CloseTag from '../Tags/CloseTag';
+import OpenTag from '../Tags/OpenTag';
 import styles from './About.module.scss';
 
 type AboutProps = {
@@ -23,7 +23,7 @@ export default function About({ setCurrentSection }: AboutProps) {
             <div className={styles.codeRow}>
               <span className={styles.codeLine}>1</span>
               <div className={styles.codeText}>
-                <OpenTag tag="section" />
+                <OpenTag tag="section" id="about" />
               </div>
             </div>
 
