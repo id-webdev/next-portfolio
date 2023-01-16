@@ -32,7 +32,7 @@ export default function ProjectCard({
   const [modalActive, setModalActive] = useState(false);
   const { width: scrollbarWidth } = useScrollbarSize();
 
-  const handleModalOpen = () => {
+  function handleModalOpen() {
     setModalActive(true);
 
     // Remove scrolling and add padding in place of the scrollbar
@@ -40,14 +40,12 @@ export default function ProjectCard({
     document.body.style.paddingRight = `${scrollbarWidth}px`;
     if (headerRef.current !== null)
       headerRef.current.style.right = `${scrollbarWidth}px`;
-  };
+  }
 
   return (
     <>
       <div
         className={styles.card}
-        role="button"
-        tabIndex={0}
         onClick={handleModalOpen}
         style={{ '--project-color': color } as CSSProperties}
       >

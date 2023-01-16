@@ -12,9 +12,9 @@ export default function Tooltip({ children, text, gap = 6 }: TooltipProps) {
   const elementRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
-  const toggleTooltip = () => {
+  function toggleTooltip() {
     setIsVisible(!isVisible);
-  };
+  }
 
   useEffect(() => {
     if (isVisible && elementRef.current && tooltipRef.current) {

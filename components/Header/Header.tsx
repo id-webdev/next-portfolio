@@ -23,20 +23,20 @@ export default forwardRef<HTMLElement, HeaderProps>(function Header(
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleMobileMenu = () => {
+  function handleMobileMenu() {
     setMobileMenuOpen(!mobileMenuOpen);
     if (!mobileMenuOpen) {
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
     }
-  };
+  }
 
-  const handleScroll = () => {
+  function handleScroll() {
     if (ref !== null && typeof ref !== 'function' && ref.current !== null) {
       setScrolled(window.scrollY >= ref.current.offsetHeight);
     }
-  };
+  }
 
   return (
     <header

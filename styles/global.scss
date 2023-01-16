@@ -104,6 +104,49 @@ svg {
       border-radius: 1em;
     }
   }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.15s ease;
+
+    &::after {
+      font-size: 1.75em;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 2px rgb(0, 122, 255, 0.75);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    @media (min-width: 1200px) {
+      display: flex;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 32px;
+
+    &::after {
+      width: 16px;
+    }
+  }
+
+  .swiper-button-next {
+    right: 32px;
+
+    &::after {
+      width: 12px;
+    }
+  }
 }
 
 .grecaptcha-badge {

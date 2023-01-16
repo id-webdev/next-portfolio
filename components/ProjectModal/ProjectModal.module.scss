@@ -18,12 +18,11 @@
 
   &.modalCloseAnimation {
     .backdrop {
-      opacity: 0;
+      animation-name: fadeOut;
     }
 
     .card {
-      opacity: 0;
-      transform: scale(0.75);
+      animation-name: scaleOut;
     }
   }
 }
@@ -32,7 +31,9 @@
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  animation: fadeIn 0.3s ease;
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
   transform: 0.3s ease;
 
   @keyframes fadeIn {
@@ -41,6 +42,15 @@
     }
     to {
       opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
   }
 }
@@ -55,7 +65,9 @@
   margin: auto;
   max-width: 1024px;
   overflow: hidden;
-  animation: scaleIn 0.3s ease;
+  animation-name: scaleIn;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
   transition: 0.3s ease;
   width: 100%;
 
@@ -80,6 +92,17 @@
     to {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+
+  @keyframes scaleOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.75);
     }
   }
 }
@@ -113,17 +136,23 @@
 .closeBtn {
   display: flex;
   align-items: center;
+  justify-content: center;
   appearance: none;
   background: none;
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  aspect-ratio: 1;
   margin-left: auto;
   transition: background-color 0.15s ease;
   opacity: 0.7;
 
   &:hover {
     opacity: 1;
+  }
+
+  &:focus {
+    outline: 1px solid var(--white);
   }
 }
 

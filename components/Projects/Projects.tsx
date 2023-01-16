@@ -1,6 +1,6 @@
 import { RefObject } from 'react';
 import { Waypoint } from 'react-waypoint';
-import { EffectCoverflow, Keyboard } from 'swiper';
+import { EffectCoverflow, Keyboard, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import projectList from '../../lib/projectList.json';
@@ -8,6 +8,8 @@ import ProjectCard from '../ProjectCard/ProjectCard';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
+import 'swiper/css/keyboard';
+import 'swiper/css/navigation';
 import styles from './Projects.module.scss';
 
 type ProjectsProps = {
@@ -61,10 +63,12 @@ export default function Projects({
             slideShadows: false,
           }}
           effect={'coverflow'}
+          grabCursor={true}
           keyboard={{
             enabled: true,
           }}
-          modules={[EffectCoverflow, Keyboard]}
+          modules={[EffectCoverflow, Keyboard, Navigation]}
+          navigation={true}
           slideToClickedSlide={true}
           slidesPerView={'auto'}
           initialSlide={1}

@@ -28,17 +28,19 @@ export default function ProjectModal({
   const [demoMobile, setDemoMobile] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const animateModalCard = () => {
+  function animateModalCard() {
     modalRef.current?.classList.add(styles.modalCardAnimation);
-    setTimeout(() => {
-      modalRef.current?.classList.remove(styles.modalCardAnimation);
-    }, 350);
-  };
 
-  const handleModalClose = () => {
+    modalRef.current?.addEventListener('transitionend', function () {
+      modalRef.current?.classList.remove(styles.modalCardAnimation);
+    });
+  }
+
+  function handleModalClose() {
     // Close modal smoothly
     modalRef.current?.classList.add(styles.modalCloseAnimation);
-    setTimeout(() => {
+
+    modalRef.current?.addEventListener('animationend', function () {
       modalRef.current?.classList.remove(styles.modalCloseAnimation);
       setModalActive(false);
 
@@ -46,8 +48,8 @@ export default function ProjectModal({
       document.body.style.overflowY = 'auto';
       document.body.style.paddingRight = '0';
       if (headerRef.current !== null) headerRef.current.style.right = '0';
-    }, 300);
-  };
+    });
+  }
 
   useEffect(() => {
     setDemoMobile(isMobile);
@@ -80,6 +82,8 @@ export default function ProjectModal({
           <video
             ref={videoRef}
             className={`${styles.video} ${demoMobile ? styles.demoMobile : ''}`}
+            height={`${demoMobile ? 600 : 'auto'}`}
+            width={`${demoMobile ? 304 : '100%'}`}
             autoPlay
             controls
             loop
