@@ -60,13 +60,12 @@
   --dark-blue-150: hsl(219, 62%, 20%);
   --dark-blue-200: hsl(219, 43%, 18%);
   --dark-blue-400: hsl(222, 100%, 13%);
-  --dark-blue-400-50: rgba(0, 20, 66, 0.5);
   --dark-blue-500: hsl(226, 76%, 13%);
   --dark-blue-600: hsl(232, 56%, 13%);
   --dark-blue-700: hsl(235, 42%, 12%);
-  --dark-blue-700-50: rgba(18, 20, 43, 0.75);
   --dark-blue-800: hsl(240, 28%, 10%);
   --dark-blue-900: hsl(248, 17%, 9%);
+  --dark-blue-900-75: rgba(20, 19, 27, 0.75);
 
   --white-5: rgba(255, 255, 255, 0.05);
   --white-15: rgba(255, 255, 255, 0.15);
@@ -160,6 +159,9 @@ svg {
 
 .swiper {
   padding: 1.25rem 0 !important;
+  max-width: 2560px;
+  margin-left: auto;
+  margin-right: auto;
 
   .swiper-slide {
     max-width: calc(100% - 2rem - 2rem);
@@ -178,7 +180,7 @@ svg {
   .swiper-button-next {
     display: none;
     backdrop-filter: blur(4px);
-    background-color: var(--dark-blue-700-50);
+    background-color: var(--dark-blue-900-75);
     border-radius: 50%;
     height: 50px;
     width: 50px;

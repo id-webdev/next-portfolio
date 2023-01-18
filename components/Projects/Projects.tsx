@@ -53,6 +53,10 @@ export default function Projects({
               slidesPerView: 5,
               spaceBetween: 96,
             },
+            2560: {
+              slidesPerView: 5,
+              spaceBetween: 150,
+            },
           }}
           centeredSlides={true}
           coverflowEffect={{

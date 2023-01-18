@@ -24,6 +24,11 @@
     bottom: -6rem;
   }
 
+  @media (min-width: 2200px) {
+    top: 0;
+    bottom: auto;
+  }
+
   svg {
     display: block;
     aspect-ratio: 1000/400;
