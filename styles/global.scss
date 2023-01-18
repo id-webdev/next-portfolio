@@ -81,6 +81,13 @@
   --red: hsl(15, 100%, 25%); // hero bg
 }
 
+// Light theme (testing)
+[data-theme='light'] {
+  * {
+    --black: var(--neutral-200);
+  }
+}
+
 ::-webkit-scrollbar {
   @media (min-width: 768px) {
     width: 8px; // same as scrollbar-width: thin
@@ -104,7 +111,6 @@
 }
 
 html {
-  color-scheme: dark light;
   scroll-behavior: smooth;
   scroll-padding-top: 68px;
 }
