@@ -8,36 +8,37 @@
   @media (min-width: 992px) {
     padding-bottom: 10rem;
   }
+}
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
+.background {
+  position: absolute;
+  bottom: -1.5rem;
+  width: 100%;
+  z-index: -1;
+
+  @media (min-width: 768px) {
+    bottom: -3.5rem;
+  }
+
+  @media (min-width: 992px) {
+    bottom: -5rem;
+  }
+
+  svg {
+    display: block;
     aspect-ratio: 1000/400;
-    background-image: url('/wave.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     transform: scaleX(-1);
+    height: 100%;
     width: 100%;
-    z-index: -1;
-
-    @media (min-width: 768px) {
-      bottom: -2rem;
-    }
-
-    @media (min-width: 992px) {
-      bottom: -5rem;
-    }
   }
 }
 
 .code {
   position: relative;
-  backdrop-filter: blur(6px);
-  border-top: 1px solid #183467;
-  border-bottom: 1px solid #183467;
-  box-shadow: 0px 4px 24px rgba(23, 92, 230, 0.15);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--dark-blue-100);
+  border-bottom: 1px solid var(--dark-blue-100);
+  box-shadow: 0px 4px 24px var(--dark-blue-200);
   font-family: monospace;
   font-size: 1rem;
   max-width: 800px;
@@ -58,7 +59,7 @@
   }
 
   @media (min-width: 576px) {
-    border: 1px solid #183467;
+    border: 1px solid var(--dark-blue-100);
     border-radius: 1rem;
     margin-left: auto;
     margin-right: auto;
@@ -85,7 +86,7 @@
 
 .codeLine {
   flex-shrink: 0;
-  color: #808080;
+  color: var(--neutral-400);
   text-align: right;
   opacity: 0.5;
   width: 18px;

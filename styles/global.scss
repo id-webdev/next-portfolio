@@ -7,34 +7,100 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
 
-  // Firefox Scrollbar
-  scrollbar-color: #183367 #121212;
-  scrollbar-width: thin;
+// Firefox Scrollbar
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-color: var(--dark-blue-100) var(--black);
+    scrollbar-width: thin;
+  }
 }
 
 :root {
-  --white: rgba(255, 255, 255, 0.87);
+  // Tailwind Neutral
+  --neutral-50: hsl(0, 0%, 98%);
+  --neutral-100: hsl(0, 0%, 96%);
+  --neutral-200: hsl(0, 0%, 90%);
+  --neutral-300: hsl(0, 0%, 83%);
+  --neutral-400: hsl(0, 0%, 64%);
+  --neutral-500: hsl(0, 0%, 45%);
+  --neutral-600: hsl(0, 0%, 32%);
+  --neutral-700: hsl(0, 0%, 25%);
+  --neutral-800: hsl(0, 0%, 15%);
+  --neutral-900: hsl(0, 0%, 9%);
+
+  // Tailwind Blue
+  --blue-50: hsl(216, 100%, 97%);
+  --blue-100: hsl(213, 100%, 93%);
+  --blue-200: hsl(213, 100%, 87%);
+  --blue-300: hsl(212, 95%, 78%);
+  --blue-400: hsl(213, 94%, 68%);
+  --blue-500: hsl(217, 90%, 60%);
+  --blue-600: hsl(221, 83%, 53%);
+  --blue-700: hsl(224, 77%, 47%);
+  --blue-800: hsl(226, 70%, 40%);
+  --blue-900: hsl(224, 63%, 33%);
+
+  // Tailwind Sky
+  --sky-50: hsl(204, 100%, 97%);
+  --sky-100: hsl(204, 94%, 94%);
+  --sky-200: hsl(201, 94%, 86%);
+  --sky-300: hsl(199, 95%, 74%);
+  --sky-400: hsl(198, 93%, 60%);
+  --sky-500: hsl(199, 89%, 48%);
+  --sky-600: hsl(200, 98%, 39%);
+  --sky-700: hsl(201, 96%, 32%);
+  --sky-800: hsl(201, 90%, 27%);
+  --sky-900: hsl(202, 80%, 24%);
+
+  // My colors
+  --dark-blue-50: hsl(222, 47%, 32%);
+  --dark-blue-100: hsl(219, 62%, 25%);
+  --dark-blue-150: hsl(219, 62%, 20%);
+  --dark-blue-200: hsl(219, 43%, 18%);
+  --dark-blue-400: hsl(222, 100%, 13%);
+  --dark-blue-400-50: rgba(0, 20, 66, 0.5);
+  --dark-blue-500: hsl(226, 76%, 13%);
+  --dark-blue-600: hsl(232, 56%, 13%);
+  --dark-blue-700: hsl(235, 42%, 12%);
+  --dark-blue-700-50: rgba(18, 20, 43, 0.75);
+  --dark-blue-800: hsl(240, 28%, 10%);
+  --dark-blue-900: hsl(248, 17%, 9%);
+
+  --white-5: rgba(255, 255, 255, 0.05);
+  --white-15: rgba(255, 255, 255, 0.15);
+
+  --black-50: rgba(18, 18, 18, 0.5);
+  --black-75: rgba(18, 18, 18, 0.75);
+  --black: rgb(18, 18, 18);
+
+  --salmon: #ce9178; // vscode
+  --success: #388e3c;
+  --danger: #f44336;
+
+  --red: hsl(15, 100%, 25%); // hero bg
 }
 
 ::-webkit-scrollbar {
-  width: 8px; // same as scrollbar-width: thin
+  @media (min-width: 768px) {
+    width: 8px; // same as scrollbar-width: thin
+  }
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: var(--black);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #183367;
+  background: var(--dark-blue-100);
   border-radius: 100vw;
 
-  // Make the styling consistent with Firefox
   &:hover {
-    background: #2b4276;
+    background: var(--dark-blue-50);
   }
   &:active {
-    background: #5e75b5;
+    background: var(--sky-600);
   }
 }
 
@@ -45,8 +111,8 @@ html {
 }
 
 body {
-  background-color: #121212;
-  color: var(--white);
+  background-color: var(--black);
+  color: var(--neutral-200);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -66,7 +132,7 @@ svg {
 .heading {
   position: relative;
   display: inline-block;
-  color: #569cd6;
+  color: var(--sky-600);
   font-size: 2rem;
   margin-bottom: 2rem;
   z-index: 1;
@@ -81,7 +147,7 @@ svg {
     position: absolute;
     right: -10%;
     bottom: 10%;
-    background-color: #183367;
+    background-color: var(--dark-blue-100);
     height: 0.25em;
     width: 75%;
     z-index: -1;
@@ -112,7 +178,7 @@ svg {
   .swiper-button-next {
     display: none;
     backdrop-filter: blur(4px);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--dark-blue-700-50);
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -123,14 +189,14 @@ svg {
     }
 
     &:hover {
-      box-shadow: 0 0 0 2px rgb(0, 122, 255, 0.75);
+      box-shadow: 0 0 0 2px var(--blue-500);
     }
 
     &:active {
       transform: scale(0.9);
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       display: flex;
     }
   }

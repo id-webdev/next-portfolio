@@ -1,16 +1,16 @@
-import styles from './ToggleSwitch.module.scss';
+import styles from './SwitchDemo.module.scss';
 
-type ToggleSwitchProps = {
+type SwitchDemoProps = {
   demoMobile: boolean;
   setDemoMobile: (demoMobile: boolean) => void;
 };
 
-export default function ToggleSwitch({
+export default function SwitchDemo({
   demoMobile,
   setDemoMobile,
-}: ToggleSwitchProps) {
+}: SwitchDemoProps) {
   return (
-    <label className={styles.toggleSwitch}>
+    <label className={styles.switchDemo}>
       <input
         type="checkbox"
         checked={demoMobile}

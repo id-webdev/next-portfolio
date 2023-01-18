@@ -1,5 +1,5 @@
 .card {
-  border: 1px solid #183367;
+  border: 1px solid var(--dark-blue-100);
   border-bottom: none;
   border-radius: 1em;
   cursor: pointer;
@@ -29,7 +29,7 @@
 
 .body {
   position: relative;
-  background-color: #001442;
+  background-color: var(--dark-blue-400);
   border-bottom: 2px solid var(--project-color);
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
@@ -43,11 +43,7 @@
     left: 0;
     bottom: 0;
     width: 50%;
-    background-image: linear-gradient(
-      to left,
-      rgba(255, 255, 255, 0.05),
-      transparent
-    );
+    background-image: linear-gradient(to left, var(--white-5), transparent);
     transform: skewX(345deg);
   }
 
@@ -63,7 +59,7 @@
 }
 
 .name {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid var(--neutral-600);
   font-weight: 600;
   margin-bottom: 0.75rem;
   padding-bottom: 0.75rem;
@@ -85,8 +81,8 @@
   left: 0.75rem;
   display: flex;
   align-items: center;
-  backdrop-filter: blur(2px);
-  background-color: rgba(0, 20, 66, 0.5);
+  backdrop-filter: blur(4px);
+  background-color: var(--dark-blue-400-50);
   border-radius: 1.25em;
   width: 38px;
   transition: all 0.3s ease;

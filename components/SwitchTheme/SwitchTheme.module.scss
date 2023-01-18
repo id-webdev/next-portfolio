@@ -1,0 +1,69 @@
+.switchTheme {
+  appearance: none;
+  background: none;
+  border: none;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: 5px;
+
+  &:hover > .sunAndMoon {
+    opacity: 1;
+  }
+
+  &.dark .sunAndMoon {
+    .sun {
+      transform: scale(1.75);
+      transition-timing-function: ease;
+      transition-duration: 0.25s;
+    }
+
+    .sunBeams {
+      opacity: 0;
+      transform: rotateZ(-25deg);
+      transition-duration: 0.15s;
+    }
+
+    .moon > circle {
+      transform: translateX(-7px);
+      transition: transform 0.25s ease-out;
+      transition-delay: 0.25s;
+      transition-duration: 0.5s;
+
+      @supports (cx: 1) {
+        transform: translateX(0);
+        cx: 17;
+        transition: cx 0.25s ease-out;
+      }
+    }
+  }
+}
+
+.sunAndMoon {
+  stroke-linecap: round;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+
+  .moon,
+  .sun,
+  .sunBeams {
+    transform-origin: center center;
+  }
+
+  .moon,
+  .sun {
+    fill: var(--neutral-200);
+  }
+
+  .sun {
+    transition: transform 0.5s ease;
+  }
+
+  .sunBeams {
+    stroke: var(--neutral-200);
+    stroke-width: 2px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+}

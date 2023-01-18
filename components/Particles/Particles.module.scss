@@ -1,6 +1,9 @@
 .particles {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   overflow: hidden;
 
   span {
@@ -19,7 +22,7 @@
     @for $i from 1 through $amount {
       &:nth-child(#{$i}) {
         $particleSize: random(75) * 1vh;
-        color: rgba(255, 255, 255, 0.05);
+        color: var(--white-5);
         top: random(100) * 1%;
         left: random(100) * 1%;
         animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;

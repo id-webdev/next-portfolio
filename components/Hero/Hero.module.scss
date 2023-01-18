@@ -1,27 +1,31 @@
 .hero {
   position: relative;
   display: flex;
-  background-image: linear-gradient(-45deg, #121212, #001442, #812000);
+  background-image: linear-gradient(
+    -45deg,
+    var(--danger),
+    var(--dark-blue-400),
+    var(--black)
+  );
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   padding: 1rem;
   z-index: 2;
 
   &::after {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     height: 100vh;
-    background-image: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0) 0%,
-      #121212 80%
-    );
+    background-image: radial-gradient(circle, transparent 0%, var(--black) 80%);
 
     @media (min-width: 576px) {
-      background-image: radial-gradient(rgba(255, 255, 255, 0) 0%, #121212 70%);
+      background-image: radial-gradient(transparent 0%, var(--black) 70%);
     }
   }
 
@@ -49,9 +53,9 @@
 }
 
 .name {
-  $text-shadow-color: #569cd6;
+  $text-shadow-color: var(--sky-600);
 
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--black-50);
   font-size: 6rem;
   font-weight: 800;
   line-height: 0.8;
@@ -92,7 +96,7 @@
 }
 
 .description {
-  color: #569cd6;
+  color: var(--sky-600);
   font-size: 4rem;
   font-weight: 800;
   line-height: 0.9;
@@ -137,8 +141,8 @@
 
   span {
     display: inline-block;
-    border-left: 1px solid var(--white);
-    border-bottom: 1px solid var(--white);
+    border-left: 1px solid var(--neutral-200);
+    border-bottom: 1px solid var(--neutral-200);
     transform: rotate(-45deg);
     width: 24px;
     height: 24px;

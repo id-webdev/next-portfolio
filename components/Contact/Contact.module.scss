@@ -1,11 +1,13 @@
 .contact {
+  background-color: var(--dark-blue-900);
+  padding-top: 2rem;
   padding-bottom: 1rem;
   scroll-margin-top: 1rem;
 }
 
 .text {
   position: relative;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--neutral-200);
   line-height: 1.5;
   margin-bottom: 2rem;
   text-align: center;
@@ -13,7 +15,7 @@
   a {
     position: relative;
     display: inline-block;
-    color: rgba(255, 255, 255, 0.87);
+    color: var(--neutral-200);
     font-weight: 500;
     padding: 0 0.2em;
     text-decoration: none;
@@ -24,7 +26,7 @@
       position: absolute;
       left: 0;
       bottom: -0.1em;
-      background-color: hsl(219, 62%, 30%);
+      background-color: var(--blue-900);
       height: 0.3em;
       transition: height 0.15s ease;
       width: 100%;
@@ -42,14 +44,14 @@
 .recaptchaNotice {
   margin-top: 1.5rem;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--neutral-400);
   text-align: center;
 
   a {
     color: inherit;
 
     &:hover {
-      color: rgba(255, 255, 255, 0.75);
+      color: var(--neutral-200);
     }
   }
 }

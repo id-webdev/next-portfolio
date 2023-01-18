@@ -1,42 +1,51 @@
 .footer {
   position: relative;
-  padding: 6rem 0 2rem;
+  background-color: var(--dark-blue-900);
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  overflow-x: hidden;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    background-image: url('/wave-footer.svg');
-    background-repeat: no-repeat;
-    background-position: left 15% bottom;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
+  @media (min-width: 768px) {
+    padding-bottom: 2.875rem;
+  }
+}
 
-    @media (min-width: 768px) {
-      background-position: center bottom;
-    }
+.background {
+  position: absolute;
+  bottom: 0;
+  min-width: 1920px;
+
+  @media (min-width: 768px) {
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 1920px;
   }
 }
 
 .grid {
+  position: relative;
   display: grid;
   row-gap: 1rem;
   align-items: center;
   justify-items: center;
+  z-index: 1;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
 
-    div {
-      &:first-of-type {
-        justify-self: start;
-      }
+    :first-child {
+      justify-self: start;
+    }
 
-      &:last-of-type {
-        justify-self: end;
-      }
+    :last-child {
+      justify-self: end;
+    }
+  }
+
+  @media (min-width: 992px) {
+    :first-child,
+    :last-child {
+      justify-self: center;
     }
   }
 }
@@ -54,7 +63,7 @@
       transition: transform 0.3s ease;
 
       path {
-        fill: #569cd6;
+        fill: var(--sky-600);
       }
     }
 
@@ -67,7 +76,7 @@
 }
 
 .text {
-  color: #569cd6;
+  color: var(--sky-600);
   font-size: 0.875rem;
   font-weight: 600;
 }

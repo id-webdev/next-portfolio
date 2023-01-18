@@ -3,6 +3,7 @@ import { forwardRef, useEffect, useState } from 'react';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import MobileMenuBtn from '../MobileMenuBtn/MobileMenuBtn';
 import Nav from '../Nav/Nav';
+import SwitchTheme from '../SwitchTheme/SwitchTheme';
 import styles from './Header.module.scss';
 
 type HeaderProps = {
@@ -50,6 +51,7 @@ export default forwardRef<HTMLElement, HeaderProps>(function Header(
           <Link href="/">id-web.dev</Link>
         </div>
         <Nav currentSection={currentSection} />
+        <SwitchTheme />
         <MobileMenuBtn
           handleMobileMenu={handleMobileMenu}
           mobileMenuOpen={mobileMenuOpen}

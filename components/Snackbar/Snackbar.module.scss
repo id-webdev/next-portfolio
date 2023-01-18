@@ -23,11 +23,11 @@
   }
 
   &.success {
-    background-color: #4bb543;
+    background-color: var(--success);
   }
 
   &.error {
-    background-color: #d32f2f;
+    background-color: var(--danger); //#d32f2f
   }
 
   @keyframes snackbarIn {

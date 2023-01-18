@@ -59,9 +59,31 @@ export default function Footer() {
             </a>
           </Tooltip>
         </div>
-        <div className={styles.text}>Thanks for visiting!</div>
-        <div className={styles.text}>© 2023 Ilya Dyma</div>
+        <p className={styles.text}>Thanks for visiting!</p>
+        <p className={styles.text}>© 2023 Ilya Dyma</p>
       </div>
+      <svg
+        className={styles.background}
+        viewBox="0 0 1920 200"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+      >
+        <rect
+          fill="var(--dark-blue-900)"
+          x="0"
+          y="0"
+          width="1920"
+          height="200"
+        ></rect>
+        <path
+          fill="var(--dark-blue-700)"
+          d="M0 31L160 43C320 55 640 79 960 84.3C1280 89.7 1600 76.3 1760 69.7L1920 63L1920 201L1760 201C1600 201 1280 201 960 201C640 201 320 201 160 201L0 201Z"
+          strokeLinecap="round"
+          strokeLinejoin="miter"
+        ></path>
+      </svg>
     </footer>
   );
 }

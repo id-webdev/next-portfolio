@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
-import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+import SwitchDemo from '../SwitchDemo/SwitchDemo';
 import styles from './ProjectModal.module.scss';
 
 type ProjectModalProps = {
@@ -64,7 +64,7 @@ export default function ProjectModal({
       <div className={styles.backdrop} onClick={animateModalCard}></div>
       <div className={`${styles.card} ${demoMobile ? styles.demoMobile : ''}`}>
         <div className={styles.header}>
-          <ToggleSwitch demoMobile={demoMobile} setDemoMobile={setDemoMobile} />
+          <SwitchDemo demoMobile={demoMobile} setDemoMobile={setDemoMobile} />
           <div className={styles.searchBar}>{name.replace(/ /g, '')}</div>
           <button className={styles.closeBtn} onClick={handleModalClose}>
             <svg

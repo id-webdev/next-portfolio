@@ -1,7 +1,7 @@
 .nav {
   display: none;
   align-items: center;
-  gap: 3rem;
+  gap: 4rem;
   margin: 0 auto;
 
   @media (min-width: 768px) {
@@ -9,20 +9,19 @@
   }
 
   .navLink {
-    font-size: 1rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.5);
-    letter-spacing: 0.03em;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--neutral-400);
     text-decoration: none;
     text-transform: lowercase;
     transition: color 0.15s ease;
 
     &:hover {
-      color: var(--white);
+      color: var(--neutral-200);
     }
 
     &.active {
-      color: var(--white);
+      color: var(--neutral-200);
     }
   }
 

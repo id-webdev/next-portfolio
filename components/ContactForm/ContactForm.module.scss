@@ -9,29 +9,30 @@
 
 .formInput {
   position: relative;
-  box-shadow: 0 0 24px rgba(23, 92, 230, 0.15);
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px var(--dark-blue-200);
 
   button {
     appearance: none;
-    background-color: rgba(24, 51, 103, 0.5);
-    border: 1px solid #183367;
+    background-color: var(--dark-blue-200);
+    border: 1px solid var(--dark-blue-100);
     border-radius: 0.5em;
     cursor: pointer;
     font-family: inherit;
     font-size: 1rem;
     font-weight: 400;
-    color: #569cd6;
+    color: var(--sky-600);
     padding: 0.75rem;
     text-transform: uppercase;
     transition: 0.15s ease;
     width: 100%;
 
     &:hover {
-      background-color: rgba(24, 51, 103, 0.75);
+      background-color: var(--dark-blue-100);
     }
 
     &:focus {
-      box-shadow: 0 0 0 2px #183367;
+      box-shadow: 0 0 0 2px var(--dark-blue-100);
       outline: none;
     }
 
@@ -45,8 +46,8 @@
     position: absolute;
     top: 50%;
     left: 0.875rem;
-    background-color: #121212;
-    color: rgba(255, 255, 255, 0.5);
+    background-color: var(--black);
+    color: var(--neutral-400);
     transform: translateY(-50%);
     transform-origin: left top;
     transition: all 0.15s ease;
@@ -57,10 +58,10 @@
   textarea {
     appearance: none;
     display: block;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #183367;
+    background-color: transparent;
+    border: 1px solid var(--dark-blue-100);
     border-radius: 0.5em;
-    color: rgba(255, 255, 255, 0.87);
+    color: var(--neutral-200);
     font-family: inherit;
     font-size: 1rem;
     font-weight: 300;
@@ -68,17 +69,17 @@
     width: 100%;
 
     &:hover {
-      box-shadow: 0 0 0 1px #183367;
+      box-shadow: 0 0 0 1px var(--dark-blue-100);
     }
 
     &:focus {
-      box-shadow: 0 0 0 2px #183367;
+      box-shadow: 0 0 0 2px var(--dark-blue-100);
       outline: none;
     }
 
     &:focus + label,
     &:not(:placeholder-shown) + label {
-      color: #569cd6;
+      color: var(--sky-600);
       transform: translateY(-110%) scale(0.75);
     }
   }
@@ -95,18 +96,18 @@
 
   &.formInputError {
     label {
-      color: #f44336 !important;
+      color: var(--danger) !important;
     }
 
     input,
     textarea {
-      border-color: #f44336;
+      border-color: var(--danger);
     }
   }
 }
 
 .formError {
-  color: #f44336;
+  color: var(--danger);
   font-size: 0.875rem;
   padding-left: 0.875rem;
   line-height: 24px;

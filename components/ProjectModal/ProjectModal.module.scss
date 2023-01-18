@@ -1,9 +1,13 @@
 .modal {
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
-  z-index: 1000;
-  padding: 5rem 1rem 1rem;
+  z-index: 1030;
+  //padding: 5rem 1rem 1rem;
+  padding: 1rem;
   overflow-y: auto;
 
   &.modalCardAnimation {
@@ -29,8 +33,11 @@
 
 .backdrop {
   position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black-50);
   animation-name: fadeIn;
   animation-duration: 0.3s;
   animation-timing-function: ease;
@@ -57,11 +64,11 @@
 
 .card {
   position: relative;
-  backdrop-filter: blur(6px);
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  background-color: var(--dark-blue-400-50);
+  border: 1px solid var(--dark-blue-100);
   border-radius: 1rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px var(--black);
   margin: auto;
   max-width: 1024px;
   overflow: hidden;
@@ -110,9 +117,9 @@
 .header {
   position: relative;
   display: grid;
+  align-items: stretch;
   grid-template-columns: repeat(3, 1fr);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 -4px 16px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 0 -4px 16px 0 var(--neutral-900);
   padding: 0.5rem 0.75rem;
   z-index: 1;
 }
@@ -122,9 +129,9 @@
 }
 
 .searchBar {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--white-15);
   border-radius: 0.25em;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--neutral-200);
   font-size: 0.75rem;
   font-weight: 300;
   padding: 0.35rem 0.5rem;
@@ -145,14 +152,15 @@
   aspect-ratio: 1;
   margin-left: auto;
   transition: background-color 0.15s ease;
+  touch-action: manipulation;
   opacity: 0.7;
 
   &:hover {
     opacity: 1;
   }
 
-  &:focus {
-    outline: 1px solid var(--white);
+  &:focus-visible {
+    outline: 1px solid var(--neutral-200);
   }
 }
 
