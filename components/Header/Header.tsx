@@ -26,11 +26,6 @@ export default forwardRef<HTMLElement, HeaderProps>(function Header(
 
   function handleMobileMenu() {
     setMobileMenuOpen(!mobileMenuOpen);
-    if (!mobileMenuOpen) {
-      document.body.style.overflowY = 'hidden';
-    } else {
-      document.body.style.overflowY = 'auto';
-    }
   }
 
   function handleScroll() {
@@ -57,7 +52,7 @@ export default forwardRef<HTMLElement, HeaderProps>(function Header(
           mobileMenuOpen={mobileMenuOpen}
         />
       </div>
-      {mobileMenuOpen && <MobileMenu handleMobileMenu={handleMobileMenu} />}
+      {mobileMenuOpen && <MobileMenu currentSection={currentSection} />}
     </header>
   );
 });

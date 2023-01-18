@@ -6,6 +6,7 @@
 
   @media (min-width: 768px) {
     display: flex;
+    margin-left: 0;
   }
 
   .navLink {
@@ -15,22 +16,26 @@
     text-decoration: none;
     text-transform: lowercase;
     transition: color 0.15s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
       color: var(--neutral-200);
     }
 
     &.active {
-      color: var(--neutral-200);
+      color: var(--neutral-300);
     }
   }
 
   &.mobile {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
 
     .navLink {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
   }
 }

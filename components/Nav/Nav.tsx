@@ -3,15 +3,10 @@ import styles from './Nav.module.scss';
 
 type NavProps = {
   currentSection?: string;
-  handleMobileMenu?: () => void;
   mobile?: true;
 };
 
-export default function Nav({
-  currentSection,
-  handleMobileMenu,
-  mobile,
-}: NavProps) {
+export default function Nav({ currentSection, mobile }: NavProps) {
   return (
     <nav className={`${styles.nav} ${mobile ? styles.mobile : ''}`}>
       <Link
@@ -19,7 +14,6 @@ export default function Nav({
         className={`${styles.navLink} ${
           currentSection === 'home' ? styles.active : ''
         }`}
-        onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to Home section"
       >
@@ -30,7 +24,6 @@ export default function Nav({
         className={`${styles.navLink} ${
           currentSection === 'about' ? styles.active : ''
         }`}
-        onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to About section"
       >
@@ -41,7 +34,6 @@ export default function Nav({
         className={`${styles.navLink} ${
           currentSection === 'projects' ? styles.active : ''
         }`}
-        onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to Projects section"
       >
@@ -52,7 +44,6 @@ export default function Nav({
         className={`${styles.navLink} ${
           currentSection === 'contact' ? styles.active : ''
         }`}
-        onClick={handleMobileMenu}
         scroll={false}
         aria-label="Go to Contact section"
       >
