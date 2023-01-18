@@ -9,6 +9,8 @@
   justify-content: space-around;
   margin-left: auto;
   width: 30px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 
   @media (min-width: 768px) {
     display: none;

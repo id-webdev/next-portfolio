@@ -26,6 +26,8 @@
     text-transform: uppercase;
     transition: 0.15s ease;
     width: 100%;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
       background-color: var(--dark-blue-100);
