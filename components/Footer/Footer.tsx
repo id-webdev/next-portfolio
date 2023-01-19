@@ -71,14 +71,14 @@ export default function Footer() {
         version="1.1"
       >
         <rect
-          fill="var(--dark-blue-900)"
+          fill="var(--wave-900)"
           x="0"
           y="0"
           width="1920"
           height="200"
         ></rect>
         <path
-          fill="var(--dark-blue-700)"
+          fill="var(--wave-700)"
           d="M0 31L160 43C320 55 640 79 960 84.3C1280 89.7 1600 76.3 1760 69.7L1920 63L1920 201L1760 201C1600 201 1280 201 960 201C640 201 320 201 160 201L0 201Z"
           strokeLinecap="round"
           strokeLinejoin="miter"
