@@ -279,7 +279,7 @@ svg {
     }
 
     &:hover {
-      box-shadow: 0 0 0 2px var(--swiper-btn-outline-hover);
+      outline: 2px solid var(--swiper-btn-outline-hover);
     }
 
     &:active {
@@ -305,6 +305,12 @@ svg {
     &::after {
       width: 12px;
     }
+  }
+}
+
+@-moz-document url-prefix() {
+  .swiper-wrapper {
+    transform-style: flat;
   }
 }
 
