@@ -8,7 +8,7 @@
   align-items: flex-end;
   justify-content: space-around;
   margin-left: 3rem;
-  width: 32px;
+  width: 28px;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 
@@ -24,7 +24,7 @@
     transition: all 0.3s ease;
 
     &:last-of-type {
-      width: 70%;
+      width: 60%;
     }
   }
 

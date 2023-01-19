@@ -60,18 +60,34 @@
 }
 
 .name {
-  $text-shadow-color: var(--sky-600);
-
   color: var(--hero-name);
   font-size: 6rem;
   font-weight: 800;
   line-height: 0.8;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
   text-transform: uppercase;
-  text-shadow: -1px -1px 0 $text-shadow-color, 0 -1px 0 $text-shadow-color,
-    1px -1px 0 $text-shadow-color, 1px 0 0 $text-shadow-color,
-    1px 1px 0 $text-shadow-color, 0 1px 0 $text-shadow-color,
-    -1px 1px 0 $text-shadow-color, -1px 0 0 $text-shadow-color;
+  animation: neonGlow 2s ease-in-out infinite alternate;
+
+  @keyframes neonGlow {
+    from {
+      text-shadow: -1px -1px 0 var(--hero-name-shadow),
+        0 -1px 0 var(--hero-name-shadow), 1px -1px 0 var(--hero-name-shadow),
+        1px 0 0 var(--hero-name-shadow), 1px 1px 0 var(--hero-name-shadow),
+        0 1px 0 var(--hero-name-shadow), -1px 1px 0 var(--hero-name-shadow),
+        -1px 0 0 var(--hero-name-shadow);
+    }
+    to {
+      text-shadow: -1px -1px 1px var(--hero-name-shadow-50),
+        0 -1px 2px var(--hero-name-shadow-50),
+        1px -1px 4px var(--hero-name-shadow-50),
+        1px 0 6px var(--hero-name-shadow-50),
+        1px 1px 7px var(--hero-name-shadow-50),
+        0 1px 8px var(--hero-name-shadow-50),
+        -1px 1px 9px var(--hero-name-shadow-50),
+        -1px 0 10px var(--hero-name-shadow-50);
+    }
+  }
 
   span:not(.nbsp) {
     display: block;
@@ -87,6 +103,7 @@
 
   @media (min-width: 576px) {
     font-size: 5rem;
+    margin-bottom: 0.25rem;
 
     span:not(.nbsp) {
       display: inline;
@@ -106,7 +123,8 @@
   color: var(--hero-description);
   font-size: 4rem;
   font-weight: 800;
-  line-height: 0.9;
+  //line-height: 0.9;
+  text-align: center;
 
   span:not(.nbsp) {
     display: block;
