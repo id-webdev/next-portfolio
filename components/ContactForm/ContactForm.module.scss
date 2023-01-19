@@ -10,18 +10,18 @@
 .formInput {
   position: relative;
   border-radius: 0.5em;
-  box-shadow: 0 0 10px var(--dark-blue-200);
+  box-shadow: 0 0 10px var(--form-shadow);
 
   button {
     appearance: none;
-    background-color: var(--dark-blue-200);
-    border: 1px solid var(--dark-blue-100);
+    background-color: var(--form-btn);
+    border: 1px solid var(--form-border);
     border-radius: 0.5em;
     cursor: pointer;
     font-family: inherit;
     font-size: 1rem;
     font-weight: 400;
-    color: var(--sky-600);
+    color: var(--form-btn-text);
     padding: 0.75rem;
     text-transform: uppercase;
     transition: 0.15s ease;
@@ -30,11 +30,11 @@
     -webkit-tap-highlight-color: transparent;
 
     &:hover {
-      background-color: var(--dark-blue-100);
+      background-color: var(--form-btn-hover);
     }
 
     &:focus {
-      box-shadow: 0 0 0 2px var(--dark-blue-100);
+      box-shadow: 0 0 0 2px var(--form-btn-hover);
       outline: none;
     }
 
@@ -48,8 +48,8 @@
     position: absolute;
     top: 50%;
     left: 0.875rem;
-    background-color: var(--black);
-    color: var(--neutral-400);
+    background-color: var(--form-label);
+    color: var(--form-label-text);
     transform: translateY(-50%);
     transform-origin: left top;
     transition: all 0.15s ease;
@@ -61,9 +61,9 @@
     appearance: none;
     display: block;
     background-color: transparent;
-    border: 1px solid var(--dark-blue-100);
+    border: 1px solid var(--form-border);
     border-radius: 0.5em;
-    color: var(--neutral-200);
+    color: var(--form-text);
     font-family: inherit;
     font-size: 1rem;
     font-weight: 300;
@@ -71,17 +71,17 @@
     width: 100%;
 
     &:hover {
-      box-shadow: 0 0 0 1px var(--dark-blue-100);
+      box-shadow: 0 0 0 1px var(--form-border);
     }
 
     &:focus {
-      box-shadow: 0 0 0 2px var(--dark-blue-100);
+      box-shadow: 0 0 0 2px var(--form-border);
       outline: none;
     }
 
     &:focus + label,
     &:not(:placeholder-shown) + label {
-      color: var(--sky-600);
+      color: var(--form-valid);
       transform: translateY(-110%) scale(0.75);
     }
   }
@@ -98,18 +98,18 @@
 
   &.formInputError {
     label {
-      color: var(--danger) !important;
+      color: var(--form-error) !important;
     }
 
     input,
     textarea {
-      border-color: var(--danger);
+      border-color: var(--form-error);
     }
   }
 }
 
 .formError {
-  color: var(--danger);
+  color: var(--form-error);
   font-size: 0.875rem;
   padding-left: 0.875rem;
   line-height: 24px;

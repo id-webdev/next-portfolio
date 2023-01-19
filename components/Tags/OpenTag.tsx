@@ -1,5 +1,3 @@
-import styles from './Tags.module.scss';
-
 type OpenTagProps = {
   tag: string;
   id?: string;
@@ -8,16 +6,16 @@ type OpenTagProps = {
 export default function OpenTag({ tag, id }: OpenTagProps) {
   return (
     <>
-      <span className={styles.gray}>&lt;</span>
-      <span className={styles.blue}>{tag}</span>
+      <span style={{ color: 'var(--neutral-500)' }}>&lt;</span>
+      <span style={{ color: 'var(--sky-600)' }}>{tag}</span>
       {id && (
         <>
-          &nbsp;<span className={styles.lightblue}>id</span>
-          <span className={styles.lightgray}>=</span>
-          <span className={styles.salmon}>&quot;{id}&quot;</span>
+          &nbsp;<span style={{ color: 'var(--blue-200)' }}>id</span>
+          <span style={{ color: 'var(--neutral-300)' }}>=</span>
+          <span style={{ color: 'var(--salmon)' }}>&quot;{id}&quot;</span>
         </>
       )}
-      <span className={styles.gray}>&gt;</span>
+      <span style={{ color: 'var(--neutral-500)' }}>&gt;</span>
     </>
   );
 }

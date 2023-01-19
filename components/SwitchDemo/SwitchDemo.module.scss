@@ -1,7 +1,7 @@
 .switchDemo {
   position: relative;
   display: flex;
-  background-color: var(--white-15);
+  background-color: var(--modal-switch);
   border-radius: 0.25em;
   cursor: pointer;
   padding: 0.15rem 0.15rem;
@@ -17,12 +17,12 @@
     }
 
     &:focus-visible + .slider {
-      outline: 1px solid var(--neutral-200);
+      outline: 1px solid var(--modal-text);
       outline-offset: 4px;
     }
 
     &:hover + .slider::before {
-      background-color: rgba(255, 255, 255, 0.25);
+      background-color: var(--modal-switch-hover);
     }
   }
 }
@@ -37,7 +37,7 @@
   &::before {
     content: '';
     position: absolute;
-    background-color: var(--white-15);
+    background-color: var(--modal-switch-active);
     border-radius: 0.15rem;
     height: 100%;
     width: 50%;
@@ -52,7 +52,7 @@
     width: 32px;
 
     svg path {
-      fill: var(--neutral-200);
+      fill: var(--modal-text);
     }
   }
 }

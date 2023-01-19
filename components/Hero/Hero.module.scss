@@ -3,9 +3,9 @@
   display: flex;
   background-image: linear-gradient(
     -45deg,
-    var(--danger),
-    var(--dark-blue-400),
-    var(--black)
+    var(--hero-gradient-1),
+    var(--hero-gradient-2),
+    var(--hero-gradient-3)
   );
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
@@ -22,10 +22,17 @@
     bottom: 0;
     left: 0;
     height: 100vh;
-    background-image: radial-gradient(circle, transparent 0%, var(--black) 80%);
+    background-image: radial-gradient(
+      circle,
+      transparent 0%,
+      var(--hero-gradient-3) 80%
+    );
 
     @media (min-width: 576px) {
-      background-image: radial-gradient(transparent 0%, var(--black) 70%);
+      background-image: radial-gradient(
+        transparent 0%,
+        var(--hero-gradient-3) 70%
+      );
     }
   }
 
@@ -55,7 +62,7 @@
 .name {
   $text-shadow-color: var(--sky-600);
 
-  color: var(--black-50);
+  color: var(--hero-name);
   font-size: 6rem;
   font-weight: 800;
   line-height: 0.8;
@@ -96,7 +103,7 @@
 }
 
 .description {
-  color: var(--sky-600);
+  color: var(--hero-description);
   font-size: 4rem;
   font-weight: 800;
   line-height: 0.9;
@@ -141,8 +148,8 @@
 
   span {
     display: inline-block;
-    border-left: 1px solid var(--neutral-200);
-    border-bottom: 1px solid var(--neutral-200);
+    border-left: 1px solid var(--hero-chevron);
+    border-bottom: 1px solid var(--hero-chevron);
     transform: rotate(-45deg);
     width: 24px;
     height: 24px;

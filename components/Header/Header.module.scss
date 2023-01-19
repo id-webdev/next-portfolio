@@ -9,10 +9,9 @@
   z-index: 1020;
 
   &.scrolled {
-    //background-color: rgba(255,255,255,0.72); //for light theme
-    background-color: var(--dark-blue-900-75);
+    background-color: var(--header);
     backdrop-filter: saturate(150%) blur(10px);
-    box-shadow: 0 4px 10px var(--black-50);
+    box-shadow: 0 4px 10px var(--header-shadow);
   }
 
   @media (max-width: 767.98px) {
@@ -30,14 +29,14 @@
   margin-right: auto;
 
   a {
-    color: var(--neutral-300);
+    color: var(--header-logo);
     font-size: 1.125rem;
     font-weight: 700;
     text-decoration: none;
     transition: color 0.15s ease;
 
     &:hover {
-      color: var(--neutral-200);
+      color: var(--header-logo-hover);
     }
   }
 }

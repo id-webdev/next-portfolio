@@ -12,7 +12,7 @@
   .navLink {
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--neutral-400);
+    color: var(--nav-link);
     text-decoration: none;
     text-transform: lowercase;
     transition: color 0.15s ease;
@@ -20,11 +20,11 @@
     -webkit-tap-highlight-color: transparent;
 
     &:hover {
-      color: var(--neutral-200);
+      color: var(--nav-link-hover);
     }
 
     &.active {
-      color: var(--neutral-300);
+      color: var(--nav-link-active);
     }
   }
 

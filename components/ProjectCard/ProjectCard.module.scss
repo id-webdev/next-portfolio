@@ -1,5 +1,5 @@
 .card {
-  border: 1px solid var(--dark-blue-100);
+  border: 1px solid var(--card-border);
   border-bottom: none;
   border-radius: 1em;
   cursor: pointer;
@@ -23,14 +23,14 @@
   position: relative;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
-  filter: brightness(0.87);
+  filter: var(--projects-filter);
   height: 350px;
   overflow: hidden;
 }
 
 .body {
   position: relative;
-  background-color: var(--dark-blue-400);
+  background-color: var(--card);
   border-bottom: 2px solid var(--project-color);
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
@@ -44,7 +44,11 @@
     left: 0;
     bottom: 0;
     width: 50%;
-    background-image: linear-gradient(to left, var(--white-5), transparent);
+    background-image: linear-gradient(
+      to left,
+      var(--card-gradient),
+      transparent
+    );
     transform: skewX(345deg);
   }
 
@@ -60,7 +64,7 @@
 }
 
 .name {
-  border-bottom: 1px solid var(--neutral-600);
+  border-bottom: 1px solid var(--card-divider);
   font-weight: 600;
   margin-bottom: 0.75rem;
   padding-bottom: 0.75rem;
@@ -83,7 +87,7 @@
   display: flex;
   align-items: center;
   backdrop-filter: blur(4px);
-  background-color: var(--black-50);
+  background-color: var(--card-hover);
   border-radius: 1.25em;
   width: 38px;
   transition: all 0.3s ease;

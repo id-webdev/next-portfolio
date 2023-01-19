@@ -11,11 +11,11 @@
 
   &:hover {
     .sun {
-      fill: var(--neutral-200);
+      fill: var(--header-btn-hover);
     }
 
     .sunBeams {
-      stroke: var(--neutral-200);
+      stroke: var(--header-btn-hover);
     }
   }
 
@@ -59,7 +59,7 @@
 
   .moon,
   .sun {
-    fill: var(--neutral-300);
+    fill: var(--header-btn);
   }
 
   .sun {
@@ -67,7 +67,7 @@
   }
 
   .sunBeams {
-    stroke: var(--neutral-300);
+    stroke: var(--header-btn);
     stroke-width: 2px;
     transition: transform 0.5s ease, opacity 0.5s ease;
   }

@@ -22,7 +22,7 @@
     @for $i from 1 through $amount {
       &:nth-child(#{$i}) {
         $particleSize: random(75) * 1vh;
-        color: var(--white-5);
+        color: var(--hero-particle);
         top: random(100) * 1%;
         left: random(100) * 1%;
         animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;

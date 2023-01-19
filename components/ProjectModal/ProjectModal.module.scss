@@ -36,7 +36,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--black-75);
+  background-color: var(--modal-backdrop);
   animation-name: fadeIn;
   animation-duration: 0.3s;
   animation-timing-function: ease;
@@ -64,10 +64,10 @@
 .card {
   position: relative;
   backdrop-filter: blur(10px);
-  background-color: var(--white-5);
-  border: 1px solid var(--neutral-700);
+  background-color: var(--modal);
+  border: 1px solid var(--modal-border);
   border-radius: 1rem;
-  box-shadow: 0 4px 30px var(--black);
+  box-shadow: 0 4px 30px var(--modal-shadow);
   margin: auto;
   max-width: 1024px;
   overflow: hidden;
@@ -118,7 +118,7 @@
   display: grid;
   align-items: stretch;
   grid-template-columns: repeat(3, 1fr);
-  box-shadow: 0 -4px 16px 0 var(--neutral-900);
+  box-shadow: 0 -4px 16px 0 var(--modal-header-shadow);
   padding: 0.5rem 0.75rem;
   z-index: 1;
 }
@@ -128,9 +128,9 @@
 }
 
 .searchBar {
-  background-color: var(--white-15);
+  background-color: var(--modal-searchbar);
   border-radius: 0.25em;
-  color: var(--neutral-200);
+  color: var(--modal-text);
   font-size: 0.75rem;
   font-weight: 300;
   padding: 0.35rem 0.5rem;
@@ -160,7 +160,7 @@
   }
 
   &:focus-visible {
-    outline: 1px solid var(--neutral-200);
+    outline: 1px solid var(--modal-text);
   }
 }
 

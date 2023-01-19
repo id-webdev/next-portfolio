@@ -1,5 +1,3 @@
-import styles from './Tags.module.scss';
-
 type CloseTagProps = {
   tag: string;
 };
@@ -7,10 +5,10 @@ type CloseTagProps = {
 export default function CloseTag({ tag }: CloseTagProps) {
   return (
     <>
-      <span className={styles.gray}>&lt;</span>
-      <span className={styles.gray}>/</span>
-      <span className={styles.blue}>{tag}</span>
-      <span className={styles.gray}>&gt;</span>
+      <span style={{ color: 'var(--neutral-500)' }}>&lt;</span>
+      <span style={{ color: 'var(--neutral-500)' }}>/</span>
+      <span style={{ color: 'var(--sky-600)' }}>{tag}</span>
+      <span style={{ color: 'var(--neutral-500)' }}>&gt;</span>
     </>
   );
 }

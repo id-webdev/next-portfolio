@@ -1,6 +1,6 @@
 .footer {
   position: relative;
-  background-color: var(--dark-blue-900);
+  background-color: var(--wave-900);
   padding-top: 6rem;
   padding-bottom: 2rem;
   overflow-x: hidden;
@@ -67,7 +67,7 @@
       transition: transform 0.3s ease;
 
       path {
-        fill: var(--sky-600);
+        fill: var(--footer-text);
       }
     }
 
@@ -80,7 +80,7 @@
 }
 
 .text {
-  color: var(--sky-600);
+  color: var(--footer-text);
   font-size: 0.875rem;
   font-weight: 600;
 }

@@ -77,15 +77,97 @@
   --salmon: #ce9178; // vscode
   --success: #388e3c;
   --danger: #f44336;
-
-  --red: hsl(15, 100%, 25%); // hero bg
 }
 
-// Light theme (testing)
+/* TO DO
 [data-theme='light'] {
-  * {
-    --black: var(--neutral-200);
-  }
+  
+}
+*/
+
+[data-theme='dark'] {
+  --body: var(--black);
+  --body-text: var(--neutral-300);
+
+  --header: var(--dark-blue-900-75);
+  --header-btn: var(--neutral-300);
+  --header-btn-hover: var(--neutral-200);
+  --header-shadow: var(--black-50);
+
+  --nav-link: var(--neutral-400);
+  --nav-link-active: var(--neutral-300);
+  --nav-link-hover: var(--neutral-200);
+
+  --heading: var(--sky-600);
+  --heading-underline: var(--dark-blue-100);
+
+  --hero-chevron: var(--neutral-200);
+  --hero-gradient-1: var(--danger); // Can also try #802000
+  --hero-gradient-2: var(--dark-blue-400);
+  --hero-gradient-3: var(--black);
+  --hero-description: var(--sky-600);
+  --hero-name: var(--black-50);
+  --hero-particle: var(--white-5);
+
+  --code-border: var(--dark-blue-100);
+  --code-line: var(--neutral-400);
+  --code-shadow: var(--dark-blue-200);
+
+  --card: var(--dark-blue-400);
+  --card-border: var(--dark-blue-100);
+  --card-filter: brightness(0.87);
+  --card-gradient: var(--white-5);
+  --card-hover: var(--black-50);
+  --card-divider: var(--neutral-600);
+
+  --swiper-btn: var(--dark-blue-900-75);
+  --swiper-btn-outline-hover: var(--blue-500);
+
+  --modal: var(--white-5);
+  --modal-backdrop: var(--black-75);
+  --modal-border: var(--neutral-700);
+  --modal-header-shadow: var(--neutral-900);
+  --modal-searchbar: var(--white-15);
+  --modal-shadow: var(--black);
+  --modal-switch: var(--white-15);
+  --modal-switch-active: var(--white-15);
+  --modal-switch-hover: rgba(255, 255, 255, 0.25);
+  --modal-text: var(--neutral-200);
+
+  --contact-text: var(--neutral-200);
+  --contact-link-hover: var(--blue-900);
+
+  --form-border: var(--dark-blue-100);
+  --form-btn: var(--dark-blue-200);
+  --form-btn-hover: var(--dark-blue-100);
+  --form-btn-text: var(--sky-600);
+  --form-error: var(--danger);
+  --form-label: var(--dark-blue-900);
+  --form-label-text: var(--neutral-400);
+  --form-shadow: var(--dark-blue-200);
+  --form-text: var(--neutral-200);
+  --form-valid: var(--sky-600);
+
+  --recaptcha-link-hover: var(--neutral-200);
+  --recaptcha-text: var(--neutral-400);
+
+  --tooltip: var(--sky-800);
+  --tooltip-text: var(--neutral-200);
+
+  --wave-darkest: var(--black);
+  --wave-400: var(--dark-blue-400);
+  --wave-500: var(--dark-blue-500);
+  --wave-600: var(--dark-blue-600);
+  --wave-700: var(--dark-blue-700);
+  --wave-800: var(--dark-blue-800);
+  --wave-900: var(--dark-blue-900);
+
+  --footer-text: var(--sky-600);
+
+  --scrollbar-thumb: var(--dark-blue-100);
+  --scrollbar-thumb-active: var(--sky-600);
+  --scrollbar-thumb-hover: var(--dark-blue-50);
+  --scrollbar-track: var(--black);
 }
 
 ::-webkit-scrollbar {
@@ -95,18 +177,18 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--black);
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--dark-blue-100);
+  background: var(--scrollbar-thumb);
   border-radius: 100vw;
 
   &:hover {
-    background: var(--dark-blue-50);
+    background: var(--scrollbar-thumb-hover);
   }
   &:active {
-    background: var(--sky-600);
+    background: var(--scrollbar-thumb-active);
   }
 }
 
@@ -116,8 +198,8 @@ html {
 }
 
 body {
-  background-color: var(--black);
-  color: var(--neutral-300);
+  background-color: var(--body);
+  color: var(--body-text);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -137,7 +219,7 @@ svg {
 .heading {
   position: relative;
   display: inline-block;
-  color: var(--sky-600);
+  color: var(--heading);
   font-size: 2rem;
   margin-bottom: 2rem;
   z-index: 1;
@@ -152,7 +234,7 @@ svg {
     position: absolute;
     right: -10%;
     bottom: 10%;
-    background-color: var(--dark-blue-100);
+    background-color: var(--heading-underline);
     height: 0.25em;
     width: 75%;
     z-index: -1;
@@ -186,7 +268,7 @@ svg {
   .swiper-button-next {
     display: none;
     backdrop-filter: blur(4px);
-    background-color: var(--dark-blue-900-75);
+    background-color: var(--swiper-btn);
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -197,7 +279,7 @@ svg {
     }
 
     &:hover {
-      box-shadow: 0 0 0 2px var(--blue-500);
+      box-shadow: 0 0 0 2px var(--swiper-btn-outline-hover);
     }
 
     &:active {
