@@ -1,7 +1,7 @@
 import { RefObject } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { EffectCoverflow, Keyboard, Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 
 import projectList from '../../lib/projectList.json';
 import ProjectCard from '../ProjectCard/ProjectCard';
@@ -15,6 +15,26 @@ import styles from './Projects.module.scss';
 type ProjectsProps = {
   headerRef: RefObject<HTMLElement>;
   setCurrentSection: (arg0: string) => void;
+};
+
+const SwiperButtonPrev = () => {
+  const swiper = useSwiper();
+  return (
+    <button
+      className="swiper-button-prev"
+      onClick={() => swiper.slidePrev()}
+    ></button>
+  );
+};
+
+const SwiperButtonNext = () => {
+  const swiper = useSwiper();
+  return (
+    <button
+      className="swiper-button-next"
+      onClick={() => swiper.slideNext()}
+    ></button>
+  );
 };
 
 export default function Projects({
@@ -72,7 +92,10 @@ export default function Projects({
             enabled: true,
           }}
           modules={[EffectCoverflow, Keyboard, Navigation]}
-          navigation={true}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
           slideToClickedSlide={true}
           slidesPerView={'auto'}
           initialSlide={1}
@@ -94,6 +117,8 @@ export default function Projects({
               />
             </SwiperSlide>
           ))}
+          <SwiperButtonPrev />
+          <SwiperButtonNext />
         </Swiper>
         <div className={styles.background}>
           <svg

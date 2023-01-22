@@ -367,12 +367,16 @@ svg {
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
+    appearance: none;
     backdrop-filter: blur(4px);
     background-color: var(--swiper-btn);
+    border: none;
     border-radius: 50%;
     height: 50px;
     width: 50px;
     transition: transform 0.15s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 
     &::after {
       font-size: 1.75em;

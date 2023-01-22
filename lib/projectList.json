@@ -20,7 +20,7 @@
       "demoDesktopSrcMp4": "/projects/dnelectro/checkout/demo-desktop.mp4",
       "demoMobileSrcWebm": "/projects/dnelectro/checkout/demo-mobile.webm",
       "demoMobileSrcMp4": "/projects/dnelectro/checkout/demo-mobile.mp4",
-      "color": "#e3ff00"
+      "color": "#0078ff"
     },
     {
       "id": 2,
@@ -42,7 +42,7 @@
       "demoDesktopSrcMp4": "/projects/lunarpad/demo-desktop.mp4",
       "demoMobileSrcWebm": "/projects/lunarpad/demo-mobile.webm",
       "demoMobileSrcMp4": "/projects/lunarpad/demo-mobile.mp4",
-      "color": "#ff9a00"
+      "color": "#bd00ff"
     },
     {
       "id": 4,
@@ -53,7 +53,7 @@
       "demoDesktopSrcMp4": "/projects/shortcutty/demo-desktop.mp4",
       "demoMobileSrcWebm": "/projects/shortcutty/demo-mobile.webm",
       "demoMobileSrcMp4": "/projects/shortcutty/demo-mobile.mp4",
-      "color": "#0078ff"
+      "color": "#e3ff00"
     },
     {
       "id": 5,
@@ -64,7 +64,7 @@
       "demoDesktopSrcMp4": "/projects/natalijarimjane/demo-desktop.mp4",
       "demoMobileSrcWebm": "/projects/natalijarimjane/demo-mobile.webm",
       "demoMobileSrcMp4": "/projects/natalijarimjane/demo-mobile.mp4",
-      "color": "#bd00ff"
+      "color": "#ff9a00"
     },
     {
       "id": 6,
