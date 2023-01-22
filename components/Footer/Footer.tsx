@@ -78,7 +78,7 @@ export default function Footer() {
           height="200"
         ></rect>
         <path
-          fill="var(--wave-700)"
+          fill="var(--footer-wave)"
           d="M0 31L160 43C320 55 640 79 960 84.3C1280 89.7 1600 76.3 1760 69.7L1920 63L1920 201L1760 201C1600 201 1280 201 960 201C640 201 320 201 160 201L0 201Z"
           strokeLinecap="round"
           strokeLinejoin="miter"

@@ -51,6 +51,7 @@
     align-items: center;
     justify-content: center;
     width: 32px;
+    z-index: 1;
 
     svg path {
       fill: var(--modal-text);

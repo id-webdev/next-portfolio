@@ -2,9 +2,11 @@
   appearance: none;
   background: none;
   border: none;
-  aspect-ratio: 1;
   border-radius: 50%;
+  aspect-ratio: 1;
   cursor: pointer;
+  margin-left: 1rem;
+  margin-right: 1rem;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   outline-offset: 5px;

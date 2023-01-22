@@ -28,7 +28,7 @@ export default function Hero({ setCurrentSection }: HeroProps) {
           href="#about"
           className={styles.chevron}
           scroll={false}
-          aria-label="Scroll down to go to the next section"
+          aria-label="Scroll down to the next section"
         >
           <span></span>
         </Link>

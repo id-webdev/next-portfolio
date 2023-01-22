@@ -89,6 +89,7 @@
   backdrop-filter: blur(4px);
   background-color: var(--card-hover);
   border-radius: 1.25em;
+  box-shadow: 0 0 10px var(--card-hover-shadow);
   width: 38px;
   transition: all 0.3s ease;
 

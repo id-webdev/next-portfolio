@@ -52,7 +52,7 @@
     color: var(--form-label-text);
     transform: translateY(-50%);
     transform-origin: left top;
-    transition: all 0.15s ease;
+    transition: color 0.15s ease, transform 0.15s ease;
     pointer-events: none;
   }
 
@@ -60,7 +60,7 @@
   textarea {
     appearance: none;
     display: block;
-    background-color: transparent;
+    background-color: var(--form-input);
     border: 1px solid var(--form-border);
     border-radius: 0.5em;
     color: var(--form-text);

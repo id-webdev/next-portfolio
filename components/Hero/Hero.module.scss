@@ -17,11 +17,11 @@
   &::after {
     content: '';
     position: absolute;
-    top: 0;
+    top: -1rem;
     right: 0;
     bottom: 0;
     left: 0;
-    height: 100vh;
+    height: calc(100vh + 1rem);
     background-image: radial-gradient(
       circle,
       transparent 0%,
@@ -29,9 +29,12 @@
     );
 
     @media (min-width: 576px) {
+      top: 0;
+      height: 100vh;
       background-image: radial-gradient(
+        closest-side,
         transparent 0%,
-        var(--hero-gradient-3) 70%
+        var(--hero-gradient-3) 95%
       );
     }
   }
@@ -50,44 +53,28 @@
 }
 
 .content {
-  line-height: 1;
+  position: relative;
+  top: -1rem;
   margin: auto;
-  max-width: 470px;
 
-  @media (min-width: 1200px) {
-    max-width: none;
+  @media (min-width: 1400px) {
+    position: static;
   }
 }
 
 .name {
   color: var(--hero-name);
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 800;
-  line-height: 0.8;
-  margin-bottom: 0.75rem;
+  line-height: 0.9;
+  margin-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
-  animation: neonGlow 2s ease-in-out infinite alternate;
-
-  @keyframes neonGlow {
-    from {
-      text-shadow: -1px -1px 0 var(--hero-name-shadow),
-        0 -1px 0 var(--hero-name-shadow), 1px -1px 0 var(--hero-name-shadow),
-        1px 0 0 var(--hero-name-shadow), 1px 1px 0 var(--hero-name-shadow),
-        0 1px 0 var(--hero-name-shadow), -1px 1px 0 var(--hero-name-shadow),
-        -1px 0 0 var(--hero-name-shadow);
-    }
-    to {
-      text-shadow: -1px -1px 1px var(--hero-name-shadow-50),
-        0 -1px 2px var(--hero-name-shadow-50),
-        1px -1px 4px var(--hero-name-shadow-50),
-        1px 0 6px var(--hero-name-shadow-50),
-        1px 1px 7px var(--hero-name-shadow-50),
-        0 1px 8px var(--hero-name-shadow-50),
-        -1px 1px 9px var(--hero-name-shadow-50),
-        -1px 0 10px var(--hero-name-shadow-50);
-    }
-  }
+  text-shadow: -1px -1px 0 var(--hero-name-shadow),
+    0 -1px 0 var(--hero-name-shadow), 1px -1px 0 var(--hero-name-shadow),
+    1px 0 0 var(--hero-name-shadow), 1px 1px 0 var(--hero-name-shadow),
+    0 1px 0 var(--hero-name-shadow), -1px 1px 0 var(--hero-name-shadow),
+    -1px 0 0 var(--hero-name-shadow);
 
   span:not(.nbsp) {
     display: block;
@@ -117,13 +104,21 @@
       display: inline;
     }
   }
+
+  @media (min-width: 1024px) {
+    font-size: 7rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 8.5rem;
+  }
 }
 
 .description {
   color: var(--hero-description);
   font-size: 4rem;
   font-weight: 800;
-  //line-height: 0.9;
+  line-height: 0.9;
   text-align: center;
 
   span:not(.nbsp) {
@@ -137,18 +132,21 @@
 
   @media (min-width: 768px) {
     span:not(.nbsp) {
-      font-size: 0.875em;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    span:not(.nbsp) {
       display: inline;
+      font-size: 0.75em;
     }
 
     .nbsp {
       display: inline;
     }
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 4.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 5rem;
   }
 }
 
@@ -156,13 +154,21 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 5vh;
-  margin: auto;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   text-decoration: none;
+  transform: translateY(-10vh);
   height: 70px;
   width: 70px;
   z-index: 1;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  @media (min-width: 1200px) {
+    transform: translateY(-5vh);
+  }
 
   span {
     display: inline-block;

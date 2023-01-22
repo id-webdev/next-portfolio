@@ -5,10 +5,10 @@ type CloseTagProps = {
 export default function CloseTag({ tag }: CloseTagProps) {
   return (
     <>
-      <span style={{ color: 'var(--neutral-500)' }}>&lt;</span>
-      <span style={{ color: 'var(--neutral-500)' }}>/</span>
-      <span style={{ color: 'var(--sky-600)' }}>{tag}</span>
-      <span style={{ color: 'var(--neutral-500)' }}>&gt;</span>
+      <span style={{ color: 'var(--code-fragment)' }}>&lt;</span>
+      <span style={{ color: 'var(--code-fragment)' }}>/</span>
+      <span style={{ color: 'var(--code-tag)' }}>{tag}</span>
+      <span style={{ color: 'var(--code-fragment)' }}>&gt;</span>
     </>
   );
 }
