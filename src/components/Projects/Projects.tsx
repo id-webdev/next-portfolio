@@ -1,7 +1,7 @@
-import { RefObject } from 'react';
+import { RefObject, useRef } from 'react';
 import { Waypoint } from 'react-waypoint';
-import { EffectCoverflow, Keyboard, Navigation } from 'swiper';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import SwiperCore, { EffectCoverflow, Keyboard, Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import projectList from '../../lib/projectList.json';
 import ProjectCard from '../ProjectCard/ProjectCard';
@@ -17,30 +17,12 @@ type ProjectsProps = {
   setCurrentSection: (arg0: string) => void;
 };
 
-const SwiperButtonPrev = () => {
-  const swiper = useSwiper();
-  return (
-    <button
-      className="swiper-button-prev"
-      onClick={() => swiper.slidePrev()}
-    ></button>
-  );
-};
-
-const SwiperButtonNext = () => {
-  const swiper = useSwiper();
-  return (
-    <button
-      className="swiper-button-next"
-      onClick={() => swiper.slideNext()}
-    ></button>
-  );
-};
-
 export default function Projects({
   headerRef,
   setCurrentSection,
 }: ProjectsProps) {
+  const swiperRef = useRef<SwiperCore>();
+
   return (
     <Waypoint
       onEnter={() => setCurrentSection('projects')}
@@ -96,6 +78,9 @@ export default function Projects({
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           }}
+          onBeforeInit={(swiper) => {
+            swiperRef.current = swiper;
+          }}
           slideToClickedSlide={true}
           slidesPerView={'auto'}
           initialSlide={1}
@@ -117,8 +102,18 @@ export default function Projects({
               />
             </SwiperSlide>
           ))}
-          <SwiperButtonPrev />
-          <SwiperButtonNext />
+          <button
+            className="swiper-button-prev"
+            onClick={() =>
+              swiperRef.current?.slideTo(swiperRef.current?.activeIndex)
+            }
+          ></button>
+          <button
+            className="swiper-button-next"
+            onClick={() =>
+              swiperRef.current?.slideTo(swiperRef.current?.activeIndex)
+            }
+          ></button>
         </Swiper>
         <div className={styles.background}>
           <svg
