@@ -4,7 +4,7 @@
   border-radius: 1em;
   cursor: pointer;
   opacity: 0.5;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 
@@ -91,7 +91,7 @@
   border-radius: 1.25em;
   box-shadow: 0 0 10px var(--card-hover-shadow);
   width: 38px;
-  transition: all 0.3s ease;
+  transition: width 0.3s ease;
 
   @media (hover: none) {
     width: 135px;
