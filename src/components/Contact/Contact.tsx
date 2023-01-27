@@ -18,7 +18,12 @@ export default function Contact({ setCurrentSection }: ContactProps) {
             Want to get in touch?
             <br />
             Use the form below or email me directly:{' '}
-            <a href="mailto:ilyuha45@gmail.com">ilyuha45@gmail.com</a>
+            <a
+              href="mailto:ilyuha45@gmail.com"
+              aria-label="Link to Ilya's e-mail"
+            >
+              ilyuha45@gmail.com
+            </a>
           </p>
           <ContactForm />
           <p className={styles.recaptchaNotice}>
@@ -27,6 +32,7 @@ export default function Contact({ setCurrentSection }: ContactProps) {
               href="https://policies.google.com/privacy"
               rel="noreferrer"
               target="_blank"
+              aria-label="Link to Google's Privacy Policy"
             >
               Privacy Policy
             </a>{' '}
@@ -35,6 +41,7 @@ export default function Contact({ setCurrentSection }: ContactProps) {
               href="https://policies.google.com/terms"
               rel="noreferrer"
               target="_blank"
+              aria-label="Link to Google's Terms of Service"
             >
               Terms of Service
             </a>{' '}

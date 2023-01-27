@@ -11,6 +11,7 @@ export default function Footer() {
               href="https://github.com/id-webdev"
               rel="noreferrer"
               target="_blank"
+              aria-label="Link to Github"
             >
               <svg
                 width="22"
@@ -31,6 +32,7 @@ export default function Footer() {
               href="https://gitlab.com/id-webdev"
               rel="noreferrer"
               target="_blank"
+              aria-label="Link to GitLab"
             >
               <svg
                 width="24"
@@ -47,6 +49,7 @@ export default function Footer() {
               href="https://linkedin.com/in/id-webdev"
               rel="noreferrer"
               target="_blank"
+              aria-label="Linked to LinkedIn"
             >
               <svg
                 width="20"

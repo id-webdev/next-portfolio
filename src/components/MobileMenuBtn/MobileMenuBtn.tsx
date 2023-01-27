@@ -15,6 +15,7 @@ export default function MobileMenuBtn({
         mobileMenuOpen ? styles.mobileMenuOpen : ''
       }`}
       onClick={handleMobileMenu}
+      aria-label="Toggle mobile menu"
     >
       <div></div>
       <div></div>

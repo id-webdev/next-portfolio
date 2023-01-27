@@ -66,7 +66,11 @@ export default function ProjectModal({
         <div className={styles.header}>
           <SwitchDemo demoMobile={demoMobile} setDemoMobile={setDemoMobile} />
           <div className={styles.searchBar}>{name.replace(/ /g, '')}</div>
-          <button className={styles.closeBtn} onClick={handleModalClose}>
+          <button
+            className={styles.closeBtn}
+            onClick={handleModalClose}
+            aria-label="Close modal"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"

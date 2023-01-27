@@ -107,12 +107,14 @@ export default function Projects({
             onClick={() =>
               swiperRef.current?.slideTo(swiperRef.current?.activeIndex)
             }
+            aria-label="Previous slide"
           ></button>
           <button
             className="swiper-button-next"
             onClick={() =>
               swiperRef.current?.slideTo(swiperRef.current?.activeIndex)
             }
+            aria-label="Next slide"
           ></button>
         </Swiper>
         <div className={styles.background}>

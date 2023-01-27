@@ -4,7 +4,7 @@ import {
   FormEvent,
   useCallback,
   useEffect,
-  useState,
+  useState
 } from 'react';
 import { createPortal } from 'react-dom';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
@@ -224,7 +224,7 @@ export default function ContactForm() {
           </div>
         </div>
         <div className={styles.formInput}>
-          <button type="submit" disabled={!formValid || isFormSending}>
+          <button type="submit" disabled={!formValid || isFormSending} aria-label="Submit the form">
             Submit
           </button>
         </div>
